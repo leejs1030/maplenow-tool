@@ -18,6 +18,42 @@ const getMasterCubeRankUpProb = async (date?: Date) => {
   };
 };
 
+const getMasterCubeOptionProb = async (date?: Date) => {
+  const ret = (await BaseProbs.getOptionProbs(date))[cubeOrderEnum.master];
+  const res = {
+    second: {
+      rare: {
+        success: ret[0][success],
+        fail: ret[0][fail],
+      },
+      epic: {
+        success: ret[1][success],
+        fail: ret[1][fail],
+      },
+      unique: {
+        success: ret[2][success],
+        fail: ret[2][fail],
+      },
+    },
+    third: {
+      rare: {
+        success: ret[3][success],
+        fail: ret[3][fail],
+      },
+      epic: {
+        success: ret[4][success],
+        fail: ret[4][fail],
+      },
+      unique: {
+        success: ret[5][success],
+        fail: ret[5][fail],
+      },
+    },
+  };
+  return res;
+};
+
 export default {
   getMasterCubeRankUpProb,
+  getMasterCubeOptionProb,
 };

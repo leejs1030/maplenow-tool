@@ -15,6 +15,7 @@ describe('test for paragraphs ', () => {
       expect(typeof res.subPageUuid).toBe('string');
       res.paragraphs.forEach((value) => expect(typeof value.uuid).toBe('string'));
       expect(typeof res.paragraphs[0].uuid).toBe('string');
+      // console.log(res.paragraphs);
       // res.paragraphs.forEach((value) => console.log(value.autoTable));
     });
   });
