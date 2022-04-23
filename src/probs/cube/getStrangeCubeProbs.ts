@@ -1,19 +1,48 @@
-import { getRankUpProbs } from '@probs/cube/baseProbs/getRankUpProbs';
 import { cubeOrderEnum } from 'custom-type';
+import BaseProbs from './baseProbs';
 
 const [success, fail] = [0, 1];
 
 const getStrangeCubeRankUpProb = async (date?: Date) => {
-  const res = (await getRankUpProbs(date))[cubeOrderEnum.strange];
+  const res = (await BaseProbs.getRankUpProbs(date))[cubeOrderEnum.strange];
   const [toEpic] = [0];
-  const toEpicSuccess = res[toEpic][success];
-  const toEpicFail = res[toEpic][fail];
   return {
-    toEpicSuccess,
-    toEpicFail,
+    to: {
+      epic: {
+        success: res[toEpic][success],
+        fail: res[toEpic][fail],
+      },
+    },
+  };
+};
+
+const getStrangeCubeOptionProb = async (date?: Date) => {
+  const res = (await BaseProbs.getOptionProbs(date))[cubeOrderEnum.strange];
+  return {
+    second: {
+      rare: {
+        success: res[0][success],
+        fail: res[0][fail],
+      },
+      epic: {
+        success: res[1][success],
+        fail: res[1][fail],
+      },
+    },
+    third: {
+      rare: {
+        success: res[2][success],
+        fail: res[2][fail],
+      },
+      epic: {
+        success: res[3][success],
+        fail: res[3][fail],
+      },
+    },
   };
 };
 
 export default {
   getStrangeCubeRankUpProb,
+  getStrangeCubeOptionProb,
 };
