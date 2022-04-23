@@ -1,0 +1,24 @@
+{
+  "name": "maplenow-tool",
+  "version": "0.0.1",
+  "description": "easier way to use nexon-now api for maplestory",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leejs1030/maplenow-tool.git"
+  },
+  "keywords": [
+    "maplestory",
+    "nexon",
+    "api"
+  ],
+  "author": "leejs1030",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leejs1030/maplenow-tool/issues"
+  },
+  "homepage": "https://github.com/leejs1030/maplenow-tool#readme"
+}
