@@ -1,5 +1,5 @@
-import RankUp from './RankUp';
-
-export default {
-  RankUp,
-};
+// import RankUp from './RankUp';
+//
+// export default {
+//   RankUp,
+// };
