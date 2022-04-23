@@ -1,5 +1,5 @@
-import { getRankUpProbs } from '@probs/cube/baseProbs/getRankUpProbs';
 import { cubeOrderEnum } from 'custom-type';
+import BaseProbs from './baseProbs';
 
 const [success, fail] = [0, 1];
 

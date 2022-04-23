@@ -2,8 +2,8 @@ import Paragraphs from '@urls/paragraphs';
 import axios from '@libs/axios';
 import generateUrl from '@libs/utils/generateUrl';
 
-const getRankUpProbs = async (date?: Date) => {
-  const { pageUuid, subPageUuid, paragraphs } = await Paragraphs.getCubeRankUpParagraphsList(date);
+const getOptionProbs = async (date?: Date) => {
+  const { pageUuid, subPageUuid, paragraphs } = await Paragraphs.getCubeOptionParagraphsList(date);
   const promiseArr = paragraphs.map((value) =>
     Promise.all(
       value.autoTable.usedProbtables.map((row: any) =>
@@ -16,5 +16,5 @@ const getRankUpProbs = async (date?: Date) => {
 };
 
 export default {
-  getRankUpProbs,
+  getOptionProbs,
 };

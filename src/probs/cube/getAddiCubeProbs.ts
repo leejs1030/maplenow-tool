@@ -1,10 +1,10 @@
-import { getRankUpProbs } from '@probs/cube/baseProbs/getRankUpProbs';
 import { cubeOrderEnum } from 'custom-type';
+import BaseProbs from './baseProbs';
 
 const [success, fail] = [0, 1];
 
 const getAddiCubeRankUpProb = async (date?: Date) => {
-  const res = (await getRankUpProbs(date))[cubeOrderEnum.addi];
+  const res = (await BaseProbs.getRankUpProbs(date))[cubeOrderEnum.addi];
   const [toEpic, toUnique, toLegendary] = [0, 1, 2];
   const toEpicSuccess = res[toEpic][success];
   const toEpicFail = res[toEpic][fail];
