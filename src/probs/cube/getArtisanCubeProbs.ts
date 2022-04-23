@@ -6,63 +6,64 @@ const [success, fail] = [0, 1];
 const getArtisanCubeRankUpProb = async (date?: Date) => {
   const res = (await BaseProbs.getRankUpProbs(date))[cubeOrderEnum.artisan];
   const [toEpic, toUnique, toLegendary] = [0, 1, 2];
-  const toEpicSuccess = res[toEpic][success];
-  const toEpicFail = res[toEpic][fail];
-  const toUniqueSuccess = res[toUnique][success];
-  const toUniqueFail = res[toUnique][fail];
-  const toLegendarySuccess = res[toLegendary][success];
-  const toLegendaryFail = res[toLegendary][fail];
   return {
-    toEpicSuccess,
-    toEpicFail,
-    toUniqueSuccess,
-    toUniqueFail,
-    toLegendarySuccess,
-    toLegendaryFail,
+    to: {
+      epic: {
+        success: res[toEpic][success],
+        fail: res[toEpic][fail],
+      },
+      unique: {
+        success: res[toUnique][success],
+        fail: res[toUnique][fail],
+      },
+      legendary: {
+        success: res[toLegendary][success],
+        fail: res[toUnique][fail],
+      },
+    },
   };
 };
 
 const getArtisanCubeOptionProb = async (date?: Date) => {
-  const ret = (await BaseProbs.getOptionProbs(date))[cubeOrderEnum.artisan];
-  const res = {
+  const res = (await BaseProbs.getOptionProbs(date))[cubeOrderEnum.artisan];
+  return {
     second: {
       rare: {
-        success: ret[0][success],
-        fail: ret[0][fail],
+        success: res[0][success],
+        fail: res[0][fail],
       },
       epic: {
-        success: ret[1][success],
-        fail: ret[1][fail],
+        success: res[1][success],
+        fail: res[1][fail],
       },
       unique: {
-        success: ret[2][success],
-        fail: ret[2][fail],
+        success: res[2][success],
+        fail: res[2][fail],
       },
       legendary: {
-        success: ret[3][success],
-        fail: ret[3][fail],
+        success: res[3][success],
+        fail: res[3][fail],
       },
     },
     third: {
       rare: {
-        success: ret[4][success],
-        fail: ret[4][fail],
+        success: res[4][success],
+        fail: res[4][fail],
       },
       epic: {
-        success: ret[5][success],
-        fail: ret[5][fail],
+        success: res[5][success],
+        fail: res[5][fail],
       },
       unique: {
-        success: ret[6][success],
-        fail: ret[6][fail],
+        success: res[6][success],
+        fail: res[6][fail],
       },
       legendary: {
-        success: ret[7][success],
-        fail: ret[7][fail],
+        success: res[7][success],
+        fail: res[7][fail],
       },
     },
   };
-  return res;
 };
 
 export default {

@@ -4,22 +4,21 @@ import BaseProbs from './baseProbs';
 const [success, fail] = [0, 1];
 
 const getStrangeaddiCubeOptionProb = async (date?: Date) => {
-  const ret = (await BaseProbs.getOptionProbs(date))[cubeOrderEnum.strangeaddi];
-  const res = {
+  const res = (await BaseProbs.getOptionProbs(date))[cubeOrderEnum.strangeaddi];
+  return {
     second: {
       rare: {
-        success: ret[0][success],
-        fail: ret[0][fail],
+        success: res[0][success],
+        fail: res[0][fail],
       },
     },
     third: {
       rare: {
-        success: ret[1][success],
-        fail: ret[1][fail],
+        success: res[1][success],
+        fail: res[1][fail],
       },
     },
   };
-  return res;
 };
 
 export default {

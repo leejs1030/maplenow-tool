@@ -6,51 +6,52 @@ const [success, fail] = [0, 1];
 const getMasterCubeRankUpProb = async (date?: Date) => {
   const res = (await BaseProbs.getRankUpProbs(date))[cubeOrderEnum.master];
   const [toEpic, toUnique] = [0, 1];
-  const toEpicSuccess = res[toEpic][success];
-  const toEpicFail = res[toEpic][fail];
-  const toUniqueSuccess = res[toUnique][success];
-  const toUniqueFail = res[toUnique][fail];
   return {
-    toEpicSuccess,
-    toEpicFail,
-    toUniqueSuccess,
-    toUniqueFail,
+    to: {
+      epic: {
+        success: res[toEpic][success],
+        fail: res[toEpic][fail],
+      },
+      unique: {
+        success: res[toUnique][success],
+        fail: res[toUnique][fail],
+      },
+    },
   };
 };
 
 const getMasterCubeOptionProb = async (date?: Date) => {
-  const ret = (await BaseProbs.getOptionProbs(date))[cubeOrderEnum.master];
-  const res = {
+  const res = (await BaseProbs.getOptionProbs(date))[cubeOrderEnum.master];
+  return {
     second: {
       rare: {
-        success: ret[0][success],
-        fail: ret[0][fail],
+        success: res[0][success],
+        fail: res[0][fail],
       },
       epic: {
-        success: ret[1][success],
-        fail: ret[1][fail],
+        success: res[1][success],
+        fail: res[1][fail],
       },
       unique: {
-        success: ret[2][success],
-        fail: ret[2][fail],
+        success: res[2][success],
+        fail: res[2][fail],
       },
     },
     third: {
       rare: {
-        success: ret[3][success],
-        fail: ret[3][fail],
+        success: res[3][success],
+        fail: res[3][fail],
       },
       epic: {
-        success: ret[4][success],
-        fail: ret[4][fail],
+        success: res[4][success],
+        fail: res[4][fail],
       },
       unique: {
-        success: ret[5][success],
-        fail: ret[5][fail],
+        success: res[5][success],
+        fail: res[5][fail],
       },
     },
   };
-  return res;
 };
 
 export default {
