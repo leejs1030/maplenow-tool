@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-// must be same with tsconfig.json
 module.exports = {
   compilerOptions: {
   /* Visit https://aka.ms/tsconfig.json to read more about this file */
@@ -33,6 +31,8 @@ module.exports = {
     paths: {
       '@libs/*': ['./src/libs/*'],
       '@config/*': ['./src/config/*'],
+      '@errors': ['./src/errors/index.ts'],
+      '@src/*': ['./src/*'],
     }, /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     typeRoots: ['./node_modules/@types', './@types'], /* Specify multiple folders that act like `./node_modules/@types`. */
@@ -104,5 +104,5 @@ module.exports = {
     skipLibCheck: true, /* Skip type checking all .d.ts files. */
   },
   include: ['./src/**/*'],
-  exclude: ['node_modules', '.eslintrc.js'],
+  exclude: ['node_modules'],
 };
