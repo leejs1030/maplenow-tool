@@ -38,5 +38,6 @@
   },
   "dependencies": {
     "axios": "^0.26.1"
-  }
+  },
+  "eslintIgnore": ["tsconfig.js"]
 }
