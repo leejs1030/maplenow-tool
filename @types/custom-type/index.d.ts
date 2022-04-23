@@ -80,4 +80,23 @@ declare module 'custom-type'{
     artisanToLegendary,
     strangeAddiToEpic
   }
+  declare interface AutoTableItem{
+    content_name: string,
+    trialid_name: string,
+    probtable_name: string,
+    trialresult_name: string,
+    prob: string,
+    custom_columns: any,
+    count: number,
+    realprob: string,
+    windowStart: any,
+    windowEnd: string,
+    updateDt: string,
+    showRealprobWarning: boolean
+  }
+  declare interface probInfo{
+    contentid: string,
+    trialid: string,
+    probtableid: string,
+  }
 }
