@@ -1,8 +1,8 @@
 import { cubeOrderEnum, successFailEnum } from 'custom-type';
 import BaseProbs from './baseProbs';
 
-const getAddiCubeRankUpProb = async (isMiracle: boolean, date?: Date) => {
-  const res = (await BaseProbs.getRankUpProbs(isMiracle, date))[cubeOrderEnum.addi];
+const getAddiCubeRankUpProbs = async (isMiracle: boolean, date?: Date) => {
+  const res = (await BaseProbs.getCubeRankUpProbs(isMiracle, date))[cubeOrderEnum.addi];
   const [toEpic, toUnique, toLegendary] = [0, 1, 2];
   return {
     to: {
@@ -22,8 +22,8 @@ const getAddiCubeRankUpProb = async (isMiracle: boolean, date?: Date) => {
   };
 };
 
-const getAddiCubeOptionProb = async (isMiracle: boolean, date?: Date) => {
-  const res = (await BaseProbs.getOptionProbs(isMiracle, date))[cubeOrderEnum.addi];
+const getAddiCubeOptionProbs = async (isMiracle: boolean, date?: Date) => {
+  const res = (await BaseProbs.getCubeOptionProbs(isMiracle, date))[cubeOrderEnum.addi];
   return {
     second: {
       rare: {
@@ -65,6 +65,6 @@ const getAddiCubeOptionProb = async (isMiracle: boolean, date?: Date) => {
 };
 
 export default {
-  getAddiCubeRankUpProb,
-  getAddiCubeOptionProb,
+  getAddiCubeRankUpProbs,
+  getAddiCubeOptionProbs,
 };

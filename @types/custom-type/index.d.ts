@@ -138,4 +138,10 @@ declare module 'custom-type'{
     success,
     fail
   }
+  declare const enum abilRankOrderEnum{
+    rare,
+    epic,
+    unique,
+    legendary
+  }
 }
