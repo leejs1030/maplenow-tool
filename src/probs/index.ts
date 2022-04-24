@@ -1,5 +1,5 @@
-import getRedCubeRankUpProb from './cube';
+import Cubes from './cube';
 
 export default {
-  ...getRedCubeRankUpProb,
+  Cubes,
 };

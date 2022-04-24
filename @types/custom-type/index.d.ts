@@ -99,4 +99,13 @@ declare module 'custom-type'{
     trialid: string,
     probtableid: string,
   }
+  declare const enum cubeNameEnum{
+    RED = 'red',
+    BLACK = 'black',
+    ADDI = 'addi',
+    STRANGE = 'strange',
+    MASTER = 'master',
+    ARTISAN = 'artisan',
+    STRANGEADDI = 'strangeaddi'
+  }
 }

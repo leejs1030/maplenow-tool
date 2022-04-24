@@ -3,8 +3,8 @@ import BaseProbs from './baseProbs';
 
 const [success, fail] = [0, 1];
 
-const getRedCubeRankUpProb = async (date?: Date) => {
-  const res = (await BaseProbs.getRankUpProbs(date))[cubeOrderEnum.red];
+const getRedCubeRankUpProb = async (isMiracle: boolean, date?: Date) => {
+  const res = (await BaseProbs.getRankUpProbs(isMiracle, date))[cubeOrderEnum.red];
   const [toEpic, toUnique, toLegendary] = [0, 1, 2];
   return {
     to: {
@@ -24,8 +24,8 @@ const getRedCubeRankUpProb = async (date?: Date) => {
   };
 };
 
-const getRedCubeOptionProb = async (date?: Date) => {
-  const res = (await BaseProbs.getOptionProbs(date))[cubeOrderEnum.red];
+const getRedCubeOptionProb = async (isMiracle: boolean, date?: Date) => {
+  const res = (await BaseProbs.getOptionProbs(isMiracle, date))[cubeOrderEnum.red];
   return {
     second: {
       rare: {
