@@ -1,5 +1,5 @@
-import getCubeParagraphsList from './getCubeParagraphsList';
+import getCubeParagraphList from './getCubeParagraphList';
 
 export default {
-  ...getCubeParagraphsList,
+  ...getCubeParagraphList,
 };

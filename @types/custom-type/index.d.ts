@@ -134,4 +134,8 @@ declare module 'custom-type'{
     ARTISAN = 'artisan',
     STRANGEADDI = 'strangeaddi'
   }
+  declare const enum successFailEnum{
+    success,
+    fail
+  }
 }

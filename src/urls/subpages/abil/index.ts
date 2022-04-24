@@ -1,5 +1,5 @@
-import getAbilitySubPageList from './getAbilSubPageList';
+import getAbilSubPageList from './getAbilSubPageList';
 
 export default {
-  getAbilitySubPageList,
+  ...getAbilSubPageList,
 };

@@ -25,7 +25,7 @@ const getCubePragraphList = async (isMiracle: boolean, selected: cubePageEnum, d
   };
 };
 
-const getCubeRankUpParagraphsList = async (
+const getCubeRankUpParagraphList = async (
   isMiracle: boolean,
   date?: Date,
 ) => {
@@ -33,7 +33,7 @@ const getCubeRankUpParagraphsList = async (
   return getCubePragraphList(isMiracle, selected, date);
 };
 
-const getCubeOptionParagraphsList = async (
+const getCubeOptionParagraphList = async (
   isMiracle: boolean,
   date?: Date,
 ) => {
@@ -42,6 +42,6 @@ const getCubeOptionParagraphsList = async (
 };
 
 export default {
-  getCubeRankUpParagraphsList,
-  getCubeOptionParagraphsList,
+  getCubeRankUpParagraphList,
+  getCubeOptionParagraphList,
 };
