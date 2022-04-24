@@ -7,8 +7,7 @@ declare module 'custom-type'{
     isPage: boolean;
   }
   declare const enum pageEnum {
-    base = 1,
-    cube = 1,
+    cube = 0,
     abil,
     outfit,
     beauty,
@@ -16,39 +15,33 @@ declare module 'custom-type'{
     star
   }
   declare const enum cubePageEnum {
-    base = 100,
-    rankUp = 100,
+    rankUp,
     option,
     miracleRankUp,
     miracleOption,
   }
   declare const enum abilPageEnum {
-    base = 200,
-    point = 200,
+    point,
     circulator
   }
   declare const enum outfitPageEnum {
-    base = 300,
-    royalStyle = 300,
+    royalStyle,
     redPiece,
     blackPiece
   }
   declare const enum beautyPageEnum {
-    base = 400,
-    royalHair = 400,
+    royalHair,
     royalFace,
     changeRoyalHair,
     changeRoyalFace,
   }
   declare const enum petPageEnum {
-    base = 500,
-    wonderBerry = 500,
+    wonderBerry,
     crystalSweet,
     crystalDream
   }
   declare const enum starPageEnum {
-    base = 600,
-    normal = 600,
+    normal,
     multipleFive,
     underTen,
     shining

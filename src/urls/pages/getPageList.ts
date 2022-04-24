@@ -5,7 +5,7 @@ import Urls from '@urls';
 const getPageList = async (pageName: pageEnum): Promise<uuidInfo[]> => {
   const menu = await Urls.Menus.getMenu();
   if (menu.status !== 200) throw new errors.NexonNowError();
-  const res = menu.data.data[pageName - pageEnum.base];
+  const res = menu.data.data[pageName];
   return res.children;
 };
 
