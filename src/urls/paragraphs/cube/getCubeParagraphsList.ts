@@ -5,7 +5,7 @@ import axios from '@libs/axios';
 import Subpages from '../../subpages';
 
 const getCubePragraphList = async (isMiracle: boolean, selected: cubePageEnum, date?: Date) => {
-  const { pageUuid, subPages } = await Subpages.getCubeSubPageList(selected);
+  const { pageUuid, subPages } = await Subpages.Cubes.getCubeSubPageList(selected);
   let newDate;
   if (!date) newDate = new Date();
   else newDate = new Date(date);
