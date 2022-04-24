@@ -1,17 +1,10 @@
 import Paragraphs from '@urls/paragraphs';
-import axios from '@libs/axios';
-import generateUrl from '@libs/utils/generateUrl';
-import { AutoTableItem, probInfo } from 'custom-type';
+import utils from '@libs/utils';
+import { AutoTableItem } from 'custom-type';
 
-const getOptionProbs = async (date?: Date) => {
-  const { pageUuid, subPageUuid, paragraphs } = await Paragraphs.getCubeOptionParagraphsList(date);
-  const promiseArr = paragraphs.map((value) =>
-    Promise.all(
-      value.autoTable.usedProbtables.map((row: probInfo) =>
-        axios.get(generateUrl.generateProbUrl(pageUuid, subPageUuid, value.uuid, row)),
-      ),
-    ),
-  );
+const getOptionProbs = async (isMiracle: boolean, date?: Date) => {
+  const { pageUuid, subPageUuid, paragraphs } = await Paragraphs.getCubeOptionParagraphsList(isMiracle, date);
+  const promiseArr = await utils.generatePromiseArr(pageUuid, subPageUuid, paragraphs);
   const res = await Promise.all(promiseArr);
   return res.map((arr) => arr.map((value) => value.data.data.probs as AutoTableItem[]));
 };

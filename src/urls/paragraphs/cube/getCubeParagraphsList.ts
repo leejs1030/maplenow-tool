@@ -5,20 +5,23 @@ import axios from '@libs/axios';
 import Subpages from '../../subpages';
 
 const getCubeRankUpParagraphsList = async (
+  isMiracle: boolean,
   date?: Date,
 ): Promise<{
   pageUuid: string,
   subPageUuid: string,
   paragraphs: { uuid: string, autoTable: any }[],
 }> => {
-  const { pageUuid, subPages } = await Subpages.getCubeSubPageList(cubePageEnum.rankUp);
+  const selected = isMiracle ? cubePageEnum.miracleRankUp : cubePageEnum.rankUp;
+  const { pageUuid, subPages } = await Subpages.getCubeSubPageList(selected);
   let newDate;
   if (!date) newDate = new Date();
   else newDate = new Date(date);
   let i;
   for (i = 0; i < subPages.length; i += 1)
     if (utils.translateDescriptionToDate(subPages[i].description) <= newDate) break;
-  if (i >= subPages.length) throw new errors.InvalidDateError();
+  if (isMiracle) i = 0;
+  else if (i >= subPages.length) throw new errors.InvalidDateError();
   const ret = await axios.get(`/pages/${pageUuid}?subPageUuid=${subPages[i].uuid}`);
   if (ret.status !== 200) throw new errors.NexonNowError();
   return {
@@ -31,20 +34,23 @@ const getCubeRankUpParagraphsList = async (
 };
 
 const getCubeOptionParagraphsList = async (
+  isMiracle: boolean,
   date?: Date,
 ): Promise<{
   pageUuid: string,
   subPageUuid: string,
   paragraphs: { uuid: string, autoTable: any }[],
 }> => {
-  const { pageUuid, subPages } = await Subpages.getCubeSubPageList(cubePageEnum.option);
+  const selected = isMiracle ? cubePageEnum.miracleOption : cubePageEnum.option;
+  const { pageUuid, subPages } = await Subpages.getCubeSubPageList(selected);
   let newDate;
   if (!date) newDate = new Date();
   else newDate = new Date(date);
   let i;
   for (i = 0; i < subPages.length; i += 1)
     if (utils.translateDescriptionToDate(subPages[i].description) <= newDate) break;
-  if (i >= subPages.length) throw new errors.InvalidDateError();
+  if (isMiracle) i = 0;
+  else if (i >= subPages.length) throw new errors.InvalidDateError();
   const ret = await axios.get(`/pages/${pageUuid}?subPageUuid=${subPages[i].uuid}`);
   if (ret.status !== 200) throw new errors.NexonNowError();
   return {

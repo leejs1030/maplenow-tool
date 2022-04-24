@@ -3,8 +3,8 @@ import BaseProbs from './baseProbs';
 
 const [success, fail] = [0, 1];
 
-const getStrangeaddiCubeOptionProb = async (date?: Date) => {
-  const res = (await BaseProbs.getOptionProbs(date))[cubeOrderEnum.strangeaddi];
+const getStrangeaddiCubeOptionProb = async (isMiracle: boolean, date?: Date) => {
+  const res = (await BaseProbs.getOptionProbs(isMiracle, date))[cubeOrderEnum.strangeaddi];
   return {
     second: {
       rare: {
