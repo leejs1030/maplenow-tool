@@ -80,16 +80,49 @@ declare module 'custom-type'{
     artisanToLegendary,
     strangeAddiToEpic
   }
+  declare interface AutoTable {
+    header: string,
+    footer: string,
+    themeName: string,
+    contentColActive: boolean,
+    contentColAlias: any, // eslint-disable-line @typescript-eslint/no-explicit-any
+    contentColMergeCells: boolean,
+    trialColActive: boolean,
+    trialColAlias: any, // eslint-disable-line @typescript-eslint/no-explicit-any
+    trialColMergeCells: boolean,
+    probtableColActive: boolean,
+    probtableColAlias: string,
+    probtableColMergeCells: boolean,
+    trialresultColActive: boolean,
+    trialresultColAlias: string,
+    countColActive: boolean,
+    countColAlias: string,
+    probColActive: boolean,
+    probColAlias: string,
+    realProbColActive: boolean,
+    realProbColAlias: string,
+    columnOrder: { columnId: string, customColumn: boolean }[],
+    showRealProbSearchDtRange: boolean,
+    showRealProbUpdateDt: boolean,
+    usedProbtables: { contentid: string, trialid: string, probtableid: string }[],
+    realProbSearchDateRangeExposureMode: string,
+    allowTableToggle: boolean,
+    customColumns: any[], // eslint-disable-line @typescript-eslint/no-explicit-any
+    showProbVersionCreateDate: boolean,
+    probVersionCreateDate: any, // eslint-disable-line @typescript-eslint/no-explicit-any
+    realprobWarningMode: string,
+  }
+
   declare interface AutoTableItem{
     content_name: string,
     trialid_name: string,
     probtable_name: string,
     trialresult_name: string,
     prob: string,
-    custom_columns: any,
+    custom_columns: any, // eslint-disable-line @typescript-eslint/no-explicit-any
     count: number,
     realprob: string,
-    windowStart: any,
+    windowStart: any, // eslint-disable-line @typescript-eslint/no-explicit-any
     windowEnd: string,
     updateDt: string,
     showRealprobWarning: boolean
