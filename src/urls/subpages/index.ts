@@ -1,4 +1,4 @@
-import getCubeSubPageList from '@urls/subpages/getSubPageList';
+import getCubeSubPageList from './getSubPageList';
 
 export default {
   ...getCubeSubPageList,

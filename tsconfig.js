@@ -30,12 +30,13 @@ module.exports = {
     // "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
     // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     paths: {
-      '@src/*': ['./src/*'],
-      '@libs/*': ['./src/libs/*'],
-      '@config/*': ['./src/config/*'],
-      '@errors': ['./src/errors/index.ts'],
-      '@urls/*': ['./src/urls/*'],
-      '@probs/*': ['./src/probs/*'],
+      '@src*': ['./src*'],
+      '@libs*': ['./src/libs*'],
+      '@config*': ['./src/config*'],
+      '@errors': ['./src/errors'],
+      '@urls': ['./src/urls'],
+      '@probs': ['./src/probs'],
+      //       "@probs/*": ["./src/probs/*"]
     } /* Specify a set of entries that re-map imports to additional lookup locations. */,
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     typeRoots: [

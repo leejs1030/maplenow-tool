@@ -1,14 +1,11 @@
-import axios from '@libs/axios';
-import errors from '@errors';
-import { pageEnum } from 'custom-type';
-
-const getPageList = async (pageName?: pageEnum) => {
-  const menu = await axios.get('/menus');
-  if (menu.status !== 200) throw new errors.NexonNowError();
-  if (!pageName) return menu.data.data;
-  return menu.data.data[pageName].children;
-};
+import Menus from './menus';
+import Pages from './pages';
+import Paragraphs from './paragraphs';
+import SubPages from './subpages';
 
 export default {
-  getPageList,
+  Menus,
+  Pages,
+  Paragraphs,
+  SubPages,
 };
