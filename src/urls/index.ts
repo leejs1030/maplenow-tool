@@ -1,5 +1,11 @@
-import pargraphs from './paragraphs';
+import Menus from './menus';
+import Pages from './pages';
+import Paragraphs from './paragraphs';
+import SubPages from './subpages';
 
 export default {
-  pargraphs,
+  Menus,
+  Pages,
+  Paragraphs,
+  SubPages,
 };
