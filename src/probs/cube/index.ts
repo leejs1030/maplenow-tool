@@ -8,43 +8,43 @@ import getMasterCubeProbs from './getMasterCubeProbs';
 import getArtisanCubeProbs from './getArtisanCubeProbs';
 import getStrangeaddiCubeProbs from './getStrangeaddiCubeProbs';
 
-const getCubeRankUpProb = async (cubeName: cubeNameEnum, isMiracle?: boolean, date?: Date) => {
+const getCubeRankUpProbs = async (cubeName: cubeNameEnum, isMiracle?: boolean, date?: Date) => {
   isMiracle = !!isMiracle; // eslint-disable-line no-param-reassign
   switch (cubeName) {
     case cubeNameEnum.RED:
-      return getRedCubeProbs.getRedCubeRankUpProb(isMiracle, date);
+      return getRedCubeProbs.getRedCubeRankUpProbs(isMiracle, date);
     case cubeNameEnum.BLACK:
-      return getBlackCubeProbs.getBlackCubeRankUpProb(isMiracle, date);
+      return getBlackCubeProbs.getBlackCubeRankUpProbs(isMiracle, date);
     case cubeNameEnum.ADDI:
-      return getAddiCubeProbs.getAddiCubeRankUpProb(isMiracle, date);
+      return getAddiCubeProbs.getAddiCubeRankUpProbs(isMiracle, date);
     case cubeNameEnum.STRANGE:
-      return getStrangeCubeProbs.getStrangeCubeRankUpProb(isMiracle, date);
+      return getStrangeCubeProbs.getStrangeCubeRankUpProbs(isMiracle, date);
     case cubeNameEnum.MASTER:
-      return getMasterCubeProbs.getMasterCubeRankUpProb(isMiracle, date);
+      return getMasterCubeProbs.getMasterCubeRankUpProbs(isMiracle, date);
     case cubeNameEnum.ARTISAN:
-      return getArtisanCubeProbs.getArtisanCubeRankUpProb(isMiracle, date);
+      return getArtisanCubeProbs.getArtisanCubeRankUpProbs(isMiracle, date);
     default:
       throw new errors.InvalidCubeNameError();
   }
 };
 
-const getCubeOptionProb = async (cubeName: cubeNameEnum, isMiracle?: boolean, date?: Date) => {
+const getCubeOptionProbs = async (cubeName: cubeNameEnum, isMiracle?: boolean, date?: Date) => {
   isMiracle = !!isMiracle; // eslint-disable-line no-param-reassign
   switch (cubeName) {
     case cubeNameEnum.RED:
-      return getRedCubeProbs.getRedCubeOptionProb(isMiracle, date);
+      return getRedCubeProbs.getRedCubeOptionProbs(isMiracle, date);
     case cubeNameEnum.BLACK:
-      return getBlackCubeProbs.getBlackCubeOptionProb(isMiracle, date);
+      return getBlackCubeProbs.getBlackCubeOptionProbs(isMiracle, date);
     case cubeNameEnum.ADDI:
-      return getAddiCubeProbs.getAddiCubeOptionProb(isMiracle, date);
+      return getAddiCubeProbs.getAddiCubeOptionProbs(isMiracle, date);
     case cubeNameEnum.STRANGE:
-      return getStrangeCubeProbs.getStrangeCubeOptionProb(isMiracle, date);
+      return getStrangeCubeProbs.getStrangeCubeOptionProbs(isMiracle, date);
     case cubeNameEnum.MASTER:
-      return getMasterCubeProbs.getMasterCubeOptionProb(isMiracle, date);
+      return getMasterCubeProbs.getMasterCubeOptionProbs(isMiracle, date);
     case cubeNameEnum.ARTISAN:
-      return getArtisanCubeProbs.getArtisanCubeOptionProb(isMiracle, date);
+      return getArtisanCubeProbs.getArtisanCubeOptionProbs(isMiracle, date);
     case cubeNameEnum.STRANGEADDI:
-      return getStrangeaddiCubeProbs.getStrangeaddiCubeOptionProb(isMiracle, date);
+      return getStrangeaddiCubeProbs.getStrangeaddiCubeOptionProbs(isMiracle, date);
     default:
       throw new errors.InvalidCubeNameError();
   }
@@ -58,6 +58,6 @@ export default {
   ...getMasterCubeProbs,
   ...getArtisanCubeProbs,
   ...getStrangeaddiCubeProbs,
-  getCubeOptionProb,
-  getCubeRankUpProb,
+  getCubeOptionProbs,
+  getCubeRankUpProbs,
 };

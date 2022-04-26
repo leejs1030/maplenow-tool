@@ -1,6 +1,11 @@
 import Urls from '@urls';
+import { AutoTable } from 'custom-type';
 
-const testUuids = (res: { pageUuid: any, subPageUuid: any, paragraphs: { uuid: string, autoTable: any }[] }) => {
+const testUuids = (res: {
+  pageUuid: string,
+  subPageUuid: string,
+  paragraphs: { uuid: string, autoTable: AutoTable }[],
+}) => {
   expect(typeof res.pageUuid).toBe('string');
   expect(typeof res.subPageUuid).toBe('string');
   res.paragraphs.forEach((value) => expect(typeof value.uuid).toBe('string'));
@@ -10,22 +15,22 @@ const testUuids = (res: { pageUuid: any, subPageUuid: any, paragraphs: { uuid: s
 describe('test for paragraphs ', () => {
   describe('cube ', () => {
     it('rank up', async () => {
-      const res = await Urls.Paragraphs.Cubes.getCubeRankUpParagraphsList(false);
+      const res = await Urls.Paragraphs.Cubes.getCubeRankUpParagraphList(false);
       testUuids(res);
     });
 
     it('option', async () => {
-      const res = await Urls.Paragraphs.Cubes.getCubeOptionParagraphsList(false);
+      const res = await Urls.Paragraphs.Cubes.getCubeOptionParagraphList(false);
       testUuids(res);
     });
 
     it('rank up miracle', async () => {
-      const res = await Urls.Paragraphs.Cubes.getCubeRankUpParagraphsList(true);
+      const res = await Urls.Paragraphs.Cubes.getCubeRankUpParagraphList(true);
       testUuids(res);
     });
 
     it('option miracle', async () => {
-      const res = await Urls.Paragraphs.Cubes.getCubeOptionParagraphsList(true);
+      const res = await Urls.Paragraphs.Cubes.getCubeOptionParagraphList(true);
       testUuids(res);
     });
   });
