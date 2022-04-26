@@ -7,4 +7,10 @@ describe('test for subpages', () => {
     expect(typeof ret.pageUuid).toBe('string');
     expect(Array.isArray(ret.subPages)).toBeTruthy();
   });
+
+  it('getAbilSubPageList', async () => {
+    const ret = await Urls.SubPages.Cubes.getCubeSubPageList(cubePageEnum.rankUp);
+    expect(typeof ret.pageUuid).toBe('string');
+    expect(Array.isArray(ret.subPages)).toBeTruthy();
+  });
 });

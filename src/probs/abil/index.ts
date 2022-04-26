@@ -1,6 +1,5 @@
-// import getAbilCirculatorProbs from './getAbilCirculatorProbs';
-import getAbilPointProbs from './getAbilPointProbs';
+import getAbilProbs from './getAbilProbs';
 
 export default {
-  ...getAbilPointProbs,
+  ...getAbilProbs,
 };
