@@ -1,7 +1,7 @@
-import getOptionProbs from './getOptionProbs';
-import getRankUpProbs from './getRankUpProbs';
+import getCubeOptionProbs from './getCubeOptionProbs';
+import getCubeRankUpProbs from './getCubeRankUpProbs';
 
 export default {
-  ...getRankUpProbs,
-  ...getOptionProbs,
+  ...getCubeRankUpProbs,
+  ...getCubeOptionProbs,
 };

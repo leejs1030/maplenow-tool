@@ -1,11 +1,11 @@
-import { cubePageEnum } from 'custom-type';
+import { AutoTable, cubePageEnum } from 'custom-type';
 import utils from '@libs/utils';
 import errors from '@errors';
 import axios from '@libs/axios';
 import Subpages from '../../subpages';
 
 const getCubePragraphList = async (isMiracle: boolean, selected: cubePageEnum, date?: Date) => {
-  const { pageUuid, subPages } = await Subpages.getCubeSubPageList(selected);
+  const { pageUuid, subPages } = await Subpages.Cubes.getCubeSubPageList(selected);
   let newDate;
   if (!date) newDate = new Date();
   else newDate = new Date(date);
@@ -19,37 +19,29 @@ const getCubePragraphList = async (isMiracle: boolean, selected: cubePageEnum, d
   return {
     pageUuid,
     subPageUuid: subPages[i].uuid,
-    paragraphs: ret.data.data.selectedSubPage.paragraphs
-      .filter((value: any) => value.autoTable)
-      .map((value: any) => ({ uuid: value.uuid, autoTable: value.autoTable })),
+    paragraphs: (ret.data.data.selectedSubPage.paragraphs as {uuid: string, autoTable: AutoTable}[])
+      .filter((value) => value.autoTable)
+      .map((value) => ({ uuid: value.uuid, autoTable: value.autoTable })),
   };
 };
 
-const getCubeRankUpParagraphsList = async (
+const getCubeRankUpParagraphList = async (
   isMiracle: boolean,
   date?: Date,
-): Promise<{
-  pageUuid: string,
-  subPageUuid: string,
-  paragraphs: { uuid: string, autoTable: any }[],
-}> => {
+) => {
   const selected = isMiracle ? cubePageEnum.miracleRankUp : cubePageEnum.rankUp;
   return getCubePragraphList(isMiracle, selected, date);
 };
 
-const getCubeOptionParagraphsList = async (
+const getCubeOptionParagraphList = async (
   isMiracle: boolean,
   date?: Date,
-): Promise<{
-  pageUuid: string,
-  subPageUuid: string,
-  paragraphs: { uuid: string, autoTable: any }[],
-}> => {
+) => {
   const selected = isMiracle ? cubePageEnum.miracleOption : cubePageEnum.option;
   return getCubePragraphList(isMiracle, selected, date);
 };
 
 export default {
-  getCubeRankUpParagraphsList,
-  getCubeOptionParagraphsList,
+  getCubeRankUpParagraphList,
+  getCubeOptionParagraphList,
 };

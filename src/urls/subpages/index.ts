@@ -1,5 +1,7 @@
-import getCubeSubPageList from './getSubPageList';
+import Cubes from './cube';
+import Abils from './abil';
 
 export default {
-  ...getCubeSubPageList,
+  Cubes,
+  Abils,
 };
