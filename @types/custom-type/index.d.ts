@@ -1,11 +1,12 @@
-declare module 'custom-type'{
-  declare interface uuidInfo{
+declare module 'custom-type' {
+  declare interface uuidInfo {
     title: string;
     uuid: string;
     chlidren: any[];
     isLeaf: boolean;
     isPage: boolean;
   }
+
   declare const enum pageEnum {
     cube = 0,
     abil,
@@ -14,39 +15,46 @@ declare module 'custom-type'{
     pet,
     star
   }
+
   declare const enum cubePageEnum {
     rankUp,
     option,
     miracleRankUp,
     miracleOption,
   }
+
   declare const enum abilPageEnum {
     point,
     circulator
   }
+
   declare const enum outfitPageEnum {
-    royalStyle,
-    redPiece,
-    blackPiece
+    royal,
+    red,
+    black
   }
+
   declare const enum beautyPageEnum {
     royalHair,
     royalFace,
     changeRoyalHair,
     changeRoyalFace,
   }
+
   declare const enum petPageEnum {
     wonderBerry,
     crystalSweet,
     crystalDream
   }
+
   declare const enum starPageEnum {
     normal,
     multipleFive,
     underTen,
     shining
   }
-  declare const enum cubeOrderEnum{
+
+  declare const enum cubeOrderEnum {
     red,
     black,
     addi,
@@ -55,7 +63,8 @@ declare module 'custom-type'{
     artisan,
     strangeaddi
   }
-  declare const enum cubeRankOrderEnum{
+
+  declare const enum cubeRankOrderEnum {
     redToEpic,
     redToUnique,
     redToLegendary,
@@ -73,6 +82,7 @@ declare module 'custom-type'{
     artisanToLegendary,
     strangeAddiToEpic
   }
+
   declare interface AutoTable {
     header: string,
     footer: string,
@@ -106,7 +116,7 @@ declare module 'custom-type'{
     realprobWarningMode: string,
   }
 
-  declare interface AutoTableItem{
+  declare interface AutoTableItem {
     content_name: string,
     trialid_name: string,
     probtable_name: string,
@@ -120,12 +130,14 @@ declare module 'custom-type'{
     updateDt: string,
     showRealprobWarning: boolean
   }
-  declare interface probInfo{
+
+  declare interface probInfo {
     contentid: string,
     trialid: string,
     probtableid: string,
   }
-  declare const enum cubeNameEnum{
+
+  declare const enum cubeNameEnum {
     RED = 'red',
     BLACK = 'black',
     ADDI = 'addi',
@@ -134,14 +146,21 @@ declare module 'custom-type'{
     ARTISAN = 'artisan',
     STRANGEADDI = 'strangeaddi'
   }
-  declare const enum successFailEnum{
+
+  declare const enum successFailEnum {
     success,
     fail
   }
-  declare const enum abilRankOrderEnum{
+
+  declare const enum abilRankOrderEnum {
     rare,
     epic,
     unique,
     legendary
+  }
+
+  declare const enum masterPieceNameEnum {
+    red = 'red',
+    black = 'black'
   }
 }

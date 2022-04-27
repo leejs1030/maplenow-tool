@@ -1,5 +1,5 @@
 import Urls from '@urls';
-import { abilPageEnum, cubePageEnum } from 'custom-type';
+import { abilPageEnum, cubePageEnum, outfitPageEnum } from 'custom-type';
 
 describe('test for subpages', () => {
   it('getCubeSubPageList', async () => {
