@@ -1,7 +1,7 @@
-import { AutoTable, cubePageEnum } from 'custom-type';
+import { cubePageEnum } from 'custom-type';
 import utils from '@libs/utils';
 import errors from '@errors';
-import axios from '@libs/axios';
+import baseParagraphs from '@src/urls/paragraphs/baseParagraphs';
 import Subpages from '../../subpages';
 
 const getCubePragraphList = async (isMiracle: boolean, selected: cubePageEnum, date?: Date) => {
@@ -14,29 +14,15 @@ const getCubePragraphList = async (isMiracle: boolean, selected: cubePageEnum, d
     if (utils.translateDescriptionToDate(subPages[i].description) <= newDate) break;
   if (isMiracle) i = 0;
   else if (i >= subPages.length) throw new errors.InvalidDateError();
-  const ret = await axios.get(`/pages/${pageUuid}?subPageUuid=${subPages[i].uuid}`);
-  if (ret.status !== 200) throw new errors.NexonNowError();
-  return {
-    pageUuid,
-    subPageUuid: subPages[i].uuid,
-    paragraphs: (ret.data.data.selectedSubPage.paragraphs as {uuid: string, autoTable: AutoTable}[])
-      .filter((value) => value.autoTable)
-      .map((value) => ({ uuid: value.uuid, autoTable: value.autoTable })),
-  };
+  return baseParagraphs.getParagraphsByUuid(pageUuid, subPages[i].uuid);
 };
 
-const getCubeRankUpParagraphList = async (
-  isMiracle: boolean,
-  date?: Date,
-) => {
+const getCubeRankUpParagraphList = async (isMiracle: boolean, date?: Date) => {
   const selected = isMiracle ? cubePageEnum.miracleRankUp : cubePageEnum.rankUp;
   return getCubePragraphList(isMiracle, selected, date);
 };
 
-const getCubeOptionParagraphList = async (
-  isMiracle: boolean,
-  date?: Date,
-) => {
+const getCubeOptionParagraphList = async (isMiracle: boolean, date?: Date) => {
   const selected = isMiracle ? cubePageEnum.miracleOption : cubePageEnum.option;
   return getCubePragraphList(isMiracle, selected, date);
 };

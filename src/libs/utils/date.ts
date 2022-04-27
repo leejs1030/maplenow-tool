@@ -8,11 +8,11 @@ const translateDescriptionToDate = (description: string) => {
   const month = parseInt(description.slice(yend + 1, mend), 10);
   const dend = description.indexOf('일');
   const day = parseInt(description.slice(mend + 1, dend), 10);
-  const date = new Date();
-  date.setFullYear(year);
-  date.setMonth(month);
-  date.setDate(day);
-  return date;
+  const ret = new Date();
+  ret.setFullYear(year);
+  ret.setMonth(month - 1);
+  ret.setDate(day - 1);
+  return ret;
 };
 
 export default {
