@@ -9,12 +9,12 @@ describe('test for paragraphs', () => {
     });
 
     it('redPiece', async () => {
-      const res = await Urls.Paragraphs.Outfits.getRedParagraphList();
+      const res = await Urls.Paragraphs.Outfits.getRedPieceParagraphList();
       testUuids(res);
     });
 
     it('blackPiece', async () => {
-      const res = await Urls.Paragraphs.Outfits.getBlackParagraphList();
+      const res = await Urls.Paragraphs.Outfits.getBlackPieceParagraphList();
       testUuids(res);
     });
   });

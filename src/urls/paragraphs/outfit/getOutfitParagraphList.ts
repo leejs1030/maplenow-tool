@@ -31,14 +31,14 @@ const getMasterPieceParagraphList = async (pieceName: masterPieceNameEnum, date?
   return baseParagraphs.getParagraphsByUuid(pageUuid, subPages[i].uuid);
 };
 
-const getRedParagraphList = async (date?: Date) =>
+const getRedPieceParagraphList = async (date?: Date) =>
   getMasterPieceParagraphList(masterPieceNameEnum.red, date);
-const getBlackParagraphList = async (date?: Date) =>
+const getBlackPieceParagraphList = async (date?: Date) =>
   getMasterPieceParagraphList(masterPieceNameEnum.black, date);
 
 export default {
   getRoyalParagraphList: getRoyalStyleParagraphList,
   getMasterPieceParagraphList,
-  getRedParagraphList,
-  getBlackParagraphList,
+  getRedPieceParagraphList,
+  getBlackPieceParagraphList,
 };

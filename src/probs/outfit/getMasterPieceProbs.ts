@@ -21,6 +21,12 @@ const getMasterPieceProbs = async (pieceName: masterPieceNameEnum, date?: Date) 
   };
 };
 
+const getRedPieceProbs = async (date?: Date) => getMasterPieceProbs(masterPieceNameEnum.red, date);
+const getBlackPieceProbs = async (date?: Date) =>
+  getMasterPieceProbs(masterPieceNameEnum.black, date);
+
 export default {
   getMasterPieceProbs,
+  getRedPieceProbs,
+  getBlackPieceProbs,
 };
