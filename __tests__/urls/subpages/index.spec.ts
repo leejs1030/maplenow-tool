@@ -13,4 +13,10 @@ describe('test for subpages', () => {
     expect(typeof ret.pageUuid).toBe('string');
     expect(Array.isArray(ret.subPages)).toBeTruthy();
   });
+
+  it('getOutfitSubPageList', async () => {
+    const res = await Urls.SubPages.Outfits.getOutfitSubPageList(outfitPageEnum.royal);
+    expect(typeof res.pageUuid).toBe('string');
+    expect(Array.isArray(res.subPages)).toBeTruthy();
+  });
 });
