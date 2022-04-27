@@ -4,7 +4,7 @@ import errors from '@errors';
 import baseParagraphs from '@src/urls/paragraphs/baseParagraphs';
 import utils from '@libs/utils';
 
-const getRoyalParagraphList = async (season?: number) => {
+const getRoyalStyleParagraphList = async (season?: number, date?: Date) => {
   const { pageUuid, subPages } = await Subpages.Outfits.getOutfitSubPageList(outfitPageEnum.royal);
   let i = 0;
   if (season) {
@@ -37,7 +37,7 @@ const getBlackParagraphList = async (date?: Date) =>
   getMasterPieceParagraphList(masterPieceNameEnum.black, date);
 
 export default {
-  getRoyalParagraphList,
+  getRoyalParagraphList: getRoyalStyleParagraphList,
   getMasterPieceParagraphList,
   getRedParagraphList,
   getBlackParagraphList,
