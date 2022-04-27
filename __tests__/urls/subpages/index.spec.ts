@@ -1,5 +1,5 @@
 import Urls from '@urls';
-import { cubePageEnum } from 'custom-type';
+import { abilPageEnum, cubePageEnum } from 'custom-type';
 
 describe('test for subpages', () => {
   it('getCubeSubPageList', async () => {
@@ -9,7 +9,7 @@ describe('test for subpages', () => {
   });
 
   it('getAbilSubPageList', async () => {
-    const ret = await Urls.SubPages.Cubes.getCubeSubPageList(cubePageEnum.rankUp);
+    const ret = await Urls.SubPages.Abils.getAbilSubPageList(abilPageEnum.point);
     expect(typeof ret.pageUuid).toBe('string');
     expect(Array.isArray(ret.subPages)).toBeTruthy();
   });
