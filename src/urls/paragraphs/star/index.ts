@@ -1,5 +1,5 @@
 import { starPageEnum } from 'custom-type';
-import getStarParagraphList from '@urls/paragraphs/star/getStarParagraphList';
+import getStarParagraphList from './getStarParagraphList';
 
 const getNormalParagraphList = async (date?: Date) =>
   getStarParagraphList(starPageEnum.normal, date);

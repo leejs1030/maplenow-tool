@@ -1,5 +1,5 @@
 import { cubeNameEnum, fullUuidInfo } from 'custom-type';
-import errors from '@errors';
+import errors from '../../errors';
 import getRedCubeProbs from './getRedCubeProbs';
 import getBlackCubeProbs from './getBlackCubeProbs';
 import getAddiCubeProbs from './getAddiCubeProbs';

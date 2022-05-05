@@ -1,7 +1,7 @@
 import { beautyPageEnum, pageEnum } from 'custom-type';
-import Pages from '@src/urls/pages';
-import axios from '@libs/axios';
-import errors from '@errors';
+import Pages from '../../pages';
+import axios from '../../../libs/axios';
+import errors from '../../../errors';
 
 const getBeautySubPageList = async (beautyPage: beautyPageEnum) => {
   const pageList = await Pages.getPageList(pageEnum.beauty);

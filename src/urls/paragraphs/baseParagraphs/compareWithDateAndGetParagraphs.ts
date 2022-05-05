@@ -1,10 +1,10 @@
-import utils from '@libs/utils';
-import errors from '@errors';
+import utils from '../../../libs/utils';
+import errors from '../../../errors';
 import baseParagraphs from '../baseParagraphs';
 
 const compareWithDateAndGetParagraphs = async (
   pageUuid: string,
-  subPages: { uuid: string, description: string }[],
+  subPages: { uuid: string; description: string }[],
   date?: Date,
 ) => {
   let newDate;

@@ -1,7 +1,7 @@
-import Urls from '@urls';
 import { petPageEnum, fullUuidInfo } from 'custom-type';
-import getBaseProbsWithUuid from '@probs/baseUuidProbs';
-import utils from '@libs/utils';
+import getBaseProbsWithUuid from '../../baseUuidProbs';
+import Urls from '../../../urls';
+import utils from '../../../libs/utils';
 
 const getPetProbs = async (petPage: petPageEnum, date?: Date | fullUuidInfo) => {
   const { pageUuid, subPageUuid, paragraphs } = utils.isDate(date)

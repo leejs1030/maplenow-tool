@@ -1,7 +1,7 @@
-import Urls from '@urls';
-import getBaseProbsWithUuid from '@probs/baseUuidProbs';
-import utils from '@libs/utils';
 import { fullUuidInfo } from 'custom-type';
+import Urls from '../../../urls';
+import utils from '../../../libs/utils';
+import getBaseProbsWithUuid from '../../baseUuidProbs';
 
 const getRoyalFaceProbs = async (isChange: boolean, date?: Date | fullUuidInfo) => {
   const { pageUuid, subPageUuid, paragraphs } = utils.isDate(date)

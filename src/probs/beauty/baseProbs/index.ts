@@ -1,5 +1,5 @@
-import getRoyalFaceProbs from '@probs/beauty/baseProbs/getRoyalFaceProbs';
-import getRoyalHairProbs from '@probs/beauty/baseProbs/getRoyalHairProbs';
+import getRoyalFaceProbs from './getRoyalFaceProbs';
+import getRoyalHairProbs from './getRoyalHairProbs';
 
 export default {
   ...getRoyalFaceProbs,

@@ -1,6 +1,6 @@
-import Subpages from '@urls/subpages';
 import { masterPieceNameEnum, outfitPageEnum } from 'custom-type';
-import errors from '@errors';
+import errors from '../../../errors';
+import Subpages from '../../subpages';
 import baseParagraphs from '../baseParagraphs';
 
 const getRoyalStyleParagraphList = async (season?: number, date?: Date) => {

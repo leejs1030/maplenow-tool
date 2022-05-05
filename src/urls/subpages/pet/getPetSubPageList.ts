@@ -1,6 +1,6 @@
 import { petPageEnum, pageEnum } from 'custom-type';
-import axios from '@libs/axios';
-import errors from '@errors';
+import axios from '../../../libs/axios';
+import errors from '../../../errors';
 import Pages from '../../pages';
 
 const getPetSubPageList = async (petPage: petPageEnum) => {

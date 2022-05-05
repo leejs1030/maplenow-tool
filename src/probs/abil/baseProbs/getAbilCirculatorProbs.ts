@@ -1,7 +1,7 @@
-import Urls from '@urls';
-import getBaseProbsWithUuid from '@probs/baseUuidProbs';
 import { fullUuidInfo } from 'custom-type';
-import utils from '@libs/utils';
+import Urls from '../../../urls';
+import utils from '../../../libs/utils';
+import getBaseProbsWithUuid from '../../baseUuidProbs';
 
 const getAbilCirculatorProbs = async (date?: Date | fullUuidInfo) => {
   const { pageUuid, subPageUuid, paragraphs } = utils.isDate(date)

@@ -1,6 +1,6 @@
-import errors from '@errors';
-import Subpages from '@urls/subpages';
 import { beautyPageEnum } from 'custom-type';
+import errors from '../../../errors';
+import Subpages from '../../../urls/subpages';
 import baseParagraphs from '../baseParagraphs';
 
 const monthNameMapper = [

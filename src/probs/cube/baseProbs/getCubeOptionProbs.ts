@@ -1,9 +1,9 @@
-import Urls from '@urls';
-import getBaseProbsWithUuid from '@probs/baseUuidProbs';
-import utils from '@libs/utils';
 import { fullUuidInfo } from 'custom-type';
+import Urls from '../../../urls';
+import utils from '../../../libs/utils';
+import getBaseProbsWithUuid from '../../baseUuidProbs';
 
-const getCubeOptionProbs = async (isMiracle: boolean, date?: Date | fullUuidInfo) => {
+const getCubeOptionProbs = async (isMiracle?: boolean, date?: Date | fullUuidInfo) => {
   const { pageUuid, subPageUuid, paragraphs } = utils.isDate(date)
     ? await Urls.Paragraphs.Cube.getOptionParagraphList(isMiracle, date)
     : date;

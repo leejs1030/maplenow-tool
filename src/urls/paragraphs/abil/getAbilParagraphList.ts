@@ -1,6 +1,6 @@
 import { abilPageEnum } from 'custom-type';
-import utils from '@libs/utils';
-import baseParagraphs from '@src/urls/paragraphs/baseParagraphs';
+import utils from '../../../libs/utils';
+import baseParagraphs from '../baseParagraphs';
 import Subpages from '../../subpages';
 
 const getAbilParagraphList = async (selected: abilPageEnum, date?: Date) => {

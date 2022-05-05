@@ -1,11 +1,11 @@
 import { probInfo } from 'custom-type';
-import axios from '@libs/axios';
-import generateUrl from '@libs/utils/generateUrl';
+import axios from '../axios';
+import generateUrl from './generateUrl';
 
 const generatePromiseArr = async (
   pageUuid: string,
   subPageUuid: string,
-  paragraphs: { uuid: string, autoTable: any }[],
+  paragraphs: { uuid: string; autoTable: any }[],
 ) =>
   paragraphs.map((value) =>
     Promise.all(

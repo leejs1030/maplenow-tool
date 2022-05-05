@@ -1,7 +1,7 @@
 import { cubeOrderEnum, fullUuidInfo, successFailEnum } from 'custom-type';
 import BaseProbs from './baseProbs';
 
-const getStrangeCubeRankUpProbs = async (isMiracle: boolean, date?: Date | fullUuidInfo) => {
+const getStrangeCubeRankUpProbs = async (isMiracle?: boolean, date?: Date | fullUuidInfo) => {
   const res = (await BaseProbs.getCubeRankUpProbs(isMiracle, date))[cubeOrderEnum.strange];
   const [toEpic] = [0];
   return {
@@ -14,7 +14,7 @@ const getStrangeCubeRankUpProbs = async (isMiracle: boolean, date?: Date | fullU
   };
 };
 
-const getStrangeCubeOptionProbs = async (isMiracle: boolean, date?: Date | fullUuidInfo) => {
+const getStrangeCubeOptionProbs = async (isMiracle?: boolean, date?: Date | fullUuidInfo) => {
   const res = (await BaseProbs.getCubeOptionProbs(isMiracle, date))[cubeOrderEnum.strange];
   return {
     second: {

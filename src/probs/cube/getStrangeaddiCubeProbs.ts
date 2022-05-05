@@ -1,7 +1,7 @@
 import { cubeOrderEnum, fullUuidInfo, successFailEnum } from 'custom-type';
 import BaseProbs from './baseProbs';
 
-const getStrangeaddiCubeOptionProbs = async (isMiracle: boolean, date?: Date | fullUuidInfo) => {
+const getStrangeaddiCubeOptionProbs = async (isMiracle?: boolean, date?: Date | fullUuidInfo) => {
   const res = (await BaseProbs.getCubeOptionProbs(isMiracle, date))[cubeOrderEnum.strangeaddi];
   return {
     second: {

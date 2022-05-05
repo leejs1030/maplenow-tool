@@ -1,6 +1,6 @@
 import { abilPageEnum, pageEnum } from 'custom-type';
-import axios from '@libs/axios';
-import errors from '@errors';
+import axios from '../../../libs/axios';
+import errors from '../../../errors';
 import Pages from '../../pages';
 
 const getAbilSubPageList = async (abilPage: abilPageEnum) => {
