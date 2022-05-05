@@ -4,27 +4,27 @@ import { testUuids } from '../testUuid';
 describe('test for paragraphs', () => {
   describe('starforce', () => {
     it('normal', async () => {
-      const res = await Urls.Paragraphs.Stars.getNormalPragraphList();
+      const res = await Urls.Paragraphs.Stars.getStarNormalParagraphList();
       testUuids(res);
     });
 
     it('discount 30%', async () => {
-      const res = await Urls.Paragraphs.Stars.getDiscountThirtyPragraphList();
+      const res = await Urls.Paragraphs.Stars.getStarDiscountThirtyParagraphList();
       testUuids(res);
     });
 
     it('5, 10, 15 100%', async () => {
-      const res = await Urls.Paragraphs.Stars.getMultipleFivePragraphList();
+      const res = await Urls.Paragraphs.Stars.getStarMultipleFiveParagraphList();
       testUuids(res);
     });
 
     it('10성 이하 1 + 1', async () => {
-      const res = await Urls.Paragraphs.Stars.getUnderTenPragraphList();
+      const res = await Urls.Paragraphs.Stars.getStarUnderTenParagraphList();
       testUuids(res);
     });
 
     it('샤이닝', async () => {
-      const res = await Urls.Paragraphs.Stars.getShiningPragraphList();
+      const res = await Urls.Paragraphs.Stars.getStarShiningParagraphList();
       testUuids(res);
     });
   });
