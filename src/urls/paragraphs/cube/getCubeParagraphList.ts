@@ -2,7 +2,7 @@ import { cubePageEnum } from 'custom-type';
 import Subpages from '../../../urls/subpages';
 import baseParagraphs from '../baseParagraphs';
 
-const getCubePragraphList = async (isMiracle?: boolean, selected: cubePageEnum, date?: Date) => {
+const getCubePragraphList = async (selected: cubePageEnum, isMiracle?: boolean, date?: Date) => {
   const { pageUuid, subPages } = await Subpages.Cube.getCubeSubPageList(selected);
   if (subPages.length <= 1) return baseParagraphs.getParagraphsByUuid(pageUuid, subPages[0].uuid);
   return baseParagraphs.compareWithDateAndGetParagraphs(pageUuid, subPages, date);
@@ -10,12 +10,12 @@ const getCubePragraphList = async (isMiracle?: boolean, selected: cubePageEnum, 
 
 const getRankUpParagraphList = async (isMiracle?: boolean, date?: Date) => {
   const selected = isMiracle ? cubePageEnum.miracleRankUp : cubePageEnum.rankUp;
-  return getCubePragraphList(isMiracle, selected, date);
+  return getCubePragraphList(selected, isMiracle, date);
 };
 
 const getOptionParagraphList = async (isMiracle?: boolean, date?: Date) => {
   const selected = isMiracle ? cubePageEnum.miracleOption : cubePageEnum.option;
-  return getCubePragraphList(isMiracle, selected, date);
+  return getCubePragraphList(selected, isMiracle, date);
 };
 
 export default {
