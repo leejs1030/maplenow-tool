@@ -25,7 +25,7 @@ const getRoyalHairParagraphList = async (
   month?: number | string,
 ) => {
   const selected = isChange ? beautyPageEnum.changeRoyalHair : beautyPageEnum.royalHair;
-  const { pageUuid, subPages } = await Subpages.Beauties.getBeautySubPageList(selected);
+  const { pageUuid, subPages } = await Subpages.Beauty.getBeautySubPageList(selected);
   if (!year || !month || subPages.length <= 1)
     return baseParagraphs.getParagraphsByUuid(pageUuid, subPages[0].uuid);
   year = Math.floor(year); // eslint-disable-line no-param-reassign
@@ -39,7 +39,7 @@ const getRoyalHairParagraphList = async (
 
 const getRoyalFaceParagraphList = async (isChange: boolean, date?: Date) => {
   const selected = isChange ? beautyPageEnum.changeRoyalFace : beautyPageEnum.royalFace;
-  const { pageUuid, subPages } = await Subpages.Beauties.getBeautySubPageList(selected);
+  const { pageUuid, subPages } = await Subpages.Beauty.getBeautySubPageList(selected);
   if (subPages.length <= 1) return baseParagraphs.getParagraphsByUuid(pageUuid, subPages[0].uuid);
   return baseParagraphs.compareWithDateAndGetParagraphs(pageUuid, subPages, date);
 };

@@ -4,12 +4,12 @@ import { testUuids } from '../testUuid';
 describe('test for paragraphs ', () => {
   describe('test for ability', () => {
     it('point', async () => {
-      const res = await Urls.Paragraphs.Abils.getAbilPointParagraphList();
+      const res = await Urls.Paragraphs.Abil.getAbilPointParagraphList();
       testUuids(res);
     });
 
     it('circulator', async () => {
-      const res = await Urls.Paragraphs.Abils.getAbilCirculatorParagraphList();
+      const res = await Urls.Paragraphs.Abil.getAbilCirculatorParagraphList();
       testUuids(res);
     });
   });

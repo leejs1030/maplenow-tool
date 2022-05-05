@@ -3,7 +3,7 @@ import Subpages from '@urls/subpages';
 import baseParagraphs from '../baseParagraphs';
 
 const getCubePragraphList = async (isMiracle: boolean, selected: cubePageEnum, date?: Date) => {
-  const { pageUuid, subPages } = await Subpages.Cubes.getCubeSubPageList(selected);
+  const { pageUuid, subPages } = await Subpages.Cube.getCubeSubPageList(selected);
   if (subPages.length <= 1) return baseParagraphs.getParagraphsByUuid(pageUuid, subPages[0].uuid);
   return baseParagraphs.compareWithDateAndGetParagraphs(pageUuid, subPages, date);
 };

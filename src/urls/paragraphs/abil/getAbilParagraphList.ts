@@ -4,7 +4,7 @@ import baseParagraphs from '@src/urls/paragraphs/baseParagraphs';
 import Subpages from '../../subpages';
 
 const getAbilParagraphList = async (selected: abilPageEnum, date?: Date) => {
-  const { pageUuid, subPages } = await Subpages.Abils.getAbilSubPageList(selected);
+  const { pageUuid, subPages } = await Subpages.Abil.getAbilSubPageList(selected);
   let newDate;
   if (!date) newDate = new Date();
   else newDate = new Date(date);

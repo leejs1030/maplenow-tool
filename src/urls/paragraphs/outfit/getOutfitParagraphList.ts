@@ -4,7 +4,7 @@ import errors from '@errors';
 import baseParagraphs from '../baseParagraphs';
 
 const getRoyalStyleParagraphList = async (season?: number, date?: Date) => {
-  const { pageUuid, subPages } = await Subpages.Outfits.getOutfitSubPageList(
+  const { pageUuid, subPages } = await Subpages.Outfit.getOutfitSubPageList(
     outfitPageEnum.royalStyle,
   );
   let i = 0;
@@ -21,7 +21,7 @@ const getMasterPieceParagraphList = async (pieceName: masterPieceNameEnum, date?
   let selected: outfitPageEnum;
   if (pieceName === masterPieceNameEnum.red) selected = outfitPageEnum.red;
   else selected = outfitPageEnum.black;
-  const { pageUuid, subPages } = await Subpages.Outfits.getOutfitSubPageList(selected);
+  const { pageUuid, subPages } = await Subpages.Outfit.getOutfitSubPageList(selected);
   return baseParagraphs.compareWithDateAndGetParagraphs(pageUuid, subPages, date);
 };
 

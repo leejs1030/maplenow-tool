@@ -1,15 +1,15 @@
-import Cubes from './cube';
-import Abils from './abil';
-import Outfits from './outfit';
-import Beauties from './beauty';
-import Pets from './pet';
-import Stars from './star';
+import Cube from './cube';
+import Abil from './abil';
+import Outfit from './outfit';
+import Beauty from './beauty';
+import Pet from './pet';
+import Star from './star';
 
 export default {
-  Cubes,
-  Abils,
-  Outfits,
-  Beauties,
-  Pets,
-  Stars,
+  Cube,
+  Abil,
+  Outfit,
+  Beauty,
+  Pet,
+  Star,
 };

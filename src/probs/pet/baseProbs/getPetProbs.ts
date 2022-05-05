@@ -7,7 +7,7 @@ const getPetProbs = async (petPage: petPageEnum, date?: Date) => {
     pageUuid,
     subPageUuid,
     paragraphs,
-  } = await Urls.Paragraphs.Pets.getPetParagraphList(petPage, date);
+  } = await Urls.Paragraphs.Pet.getPetParagraphList(petPage, date);
   const promiseArr = await utils.generatePromiseArr(pageUuid, subPageUuid, paragraphs);
   const res = await Promise.all(promiseArr);
   return res.map((arr) => arr.map((value) => value.data.data.probs as AutoTableItem[]));

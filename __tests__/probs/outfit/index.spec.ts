@@ -2,7 +2,7 @@ import Probs from '@probs';
 import { masterPieceNameEnum } from 'custom-type';
 
 const testForMasterPiece = async (pieceName: masterPieceNameEnum) => {
-  const res = await Probs.Outfits.getMasterPieceProbs(pieceName);
+  const res = await Probs.Outfit.getMasterPieceProbs(pieceName);
 
   expect(Array.isArray(res.male.hat)).toBeTruthy();
   expect(Array.isArray(res.male.cloth)).toBeTruthy();
@@ -20,7 +20,7 @@ const testForMasterPiece = async (pieceName: masterPieceNameEnum) => {
 
 describe('test for outfit', () => {
   it('test for royal', async () => {
-    const res = await Probs.Outfits.getRoyalStyleProbs();
+    const res = await Probs.Outfit.getRoyalStyleProbs();
     expect(Array.isArray(res.male)).toBeTruthy();
     expect(Array.isArray(res.female)).toBeTruthy();
   });
