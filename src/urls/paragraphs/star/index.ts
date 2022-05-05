@@ -1,22 +1,22 @@
 import { starPageEnum } from 'custom-type';
 import getStarParagraphList from '@urls/paragraphs/star/getStarParagraphList';
 
-const getStarNormalParagraphList = async (date?: Date) =>
+const getNormalParagraphList = async (date?: Date) =>
   getStarParagraphList(starPageEnum.normal, date);
-const getStarDiscountThirtyParagraphList = async (date?: Date) =>
+const getDiscountThirtyParagraphList = async (date?: Date) =>
   getStarParagraphList(starPageEnum.discountThirty, date);
-const getStarMultipleFiveParagraphList = async (date?: Date) =>
+const getMultipleFiveParagraphList = async (date?: Date) =>
   getStarParagraphList(starPageEnum.multipleFive, date);
-const getStarShiningParagraphList = async (date?: Date) =>
+const getShiningParagraphList = async (date?: Date) =>
   getStarParagraphList(starPageEnum.shining, date);
-const getStarUnderTenParagraphList = async (date?: Date) =>
+const getUnderTenParagraphList = async (date?: Date) =>
   getStarParagraphList(starPageEnum.underTen, date);
 
 export default {
-  getStarNormalParagraphList,
-  getStarDiscountThirtyParagraphList,
-  getStarMultipleFiveParagraphList,
-  getStarShiningParagraphList,
-  getStarUnderTenParagraphList,
+  getNormalParagraphList,
+  getDiscountThirtyParagraphList,
+  getMultipleFiveParagraphList,
+  getShiningParagraphList,
+  getUnderTenParagraphList,
   getStarParagraphList,
 };

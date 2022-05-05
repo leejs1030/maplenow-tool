@@ -14,13 +14,13 @@ const getAbilParagraphList = async (selected: abilPageEnum, date?: Date) => {
   return baseParagraphs.getParagraphsByUuid(pageUuid, subPages[i].uuid);
 };
 
-const getAbilPointParagraphList = async (date?: Date) =>
-  getAbilParagraphList(abilPageEnum.point, date);
+const getPointParagraphList = async (date?: Date) => getAbilParagraphList(abilPageEnum.point, date);
 
-const getAbilCirculatorParagraphList = async (date?: Date) =>
+const getCirculatorParagraphList = async (date?: Date) =>
   getAbilParagraphList(abilPageEnum.circulator, date);
 
 export default {
-  getAbilPointParagraphList,
-  getAbilCirculatorParagraphList,
+  getPointParagraphList,
+  getCirculatorParagraphList,
+  getAbilParagraphList,
 };

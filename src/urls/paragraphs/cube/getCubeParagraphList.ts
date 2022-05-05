@@ -8,17 +8,17 @@ const getCubePragraphList = async (isMiracle: boolean, selected: cubePageEnum, d
   return baseParagraphs.compareWithDateAndGetParagraphs(pageUuid, subPages, date);
 };
 
-const getCubeRankUpParagraphList = async (isMiracle: boolean, date?: Date) => {
+const getRankUpParagraphList = async (isMiracle: boolean, date?: Date) => {
   const selected = isMiracle ? cubePageEnum.miracleRankUp : cubePageEnum.rankUp;
   return getCubePragraphList(isMiracle, selected, date);
 };
 
-const getCubeOptionParagraphList = async (isMiracle: boolean, date?: Date) => {
+const getOptionParagraphList = async (isMiracle: boolean, date?: Date) => {
   const selected = isMiracle ? cubePageEnum.miracleOption : cubePageEnum.option;
   return getCubePragraphList(isMiracle, selected, date);
 };
 
 export default {
-  getCubeRankUpParagraphList,
-  getCubeOptionParagraphList,
+  getRankUpParagraphList,
+  getOptionParagraphList,
 };
