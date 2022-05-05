@@ -3,12 +3,7 @@ import Pages from '@src/urls/pages';
 import axios from '@libs/axios';
 import errors from '@errors';
 
-const getBeautySubPageList = async (
-  beautyPage: beautyPageEnum,
-): Promise<{
-  pageUuid: string,
-  subPages: { uuid: string, description: string }[],
-}> => {
+const getBeautySubPageList = async (beautyPage: beautyPageEnum) => {
   const pageList = await Pages.getPageList(pageEnum.beauty);
   const pageUuid = pageList[beautyPage].uuid;
   const res = await axios.get(`/pages/${pageUuid}`);

@@ -3,7 +3,7 @@ import { starPageEnum } from 'custom-type';
 import baseParagraphs from '../baseParagraphs';
 
 const getStarParagraphList = async (starPage: starPageEnum, date?: Date) => {
-  const { pageUuid, subPages } = await Subpages.Stars.getStarSubPageList(starPage);
+  const { pageUuid, subPages } = await Subpages.Star.getStarSubPageList(starPage);
   if (subPages.length <= 1) return baseParagraphs.getParagraphsByUuid(pageUuid, subPages[0].uuid);
   return baseParagraphs.compareWithDateAndGetParagraphs(pageUuid, subPages, date);
 };

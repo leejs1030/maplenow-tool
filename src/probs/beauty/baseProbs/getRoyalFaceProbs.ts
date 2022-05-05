@@ -7,7 +7,7 @@ const getRoyalFaceProbs = async (isChange: boolean, date?: Date) => {
     pageUuid,
     subPageUuid,
     paragraphs,
-  } = await Urls.Paragraphs.Beauties.getRoyalFaceParagraphList(isChange, date);
+  } = await Urls.Paragraphs.Beauty.getRoyalFaceParagraphList(isChange, date);
   const promiseArr = await utils.generatePromiseArr(pageUuid, subPageUuid, paragraphs);
   const res = await Promise.all(promiseArr);
   return res.map((arr) => arr.map((value) => value.data.data.probs as AutoTableItem[]));

@@ -7,7 +7,7 @@ const getCubeRankUpProbs = async (isMiracle: boolean, date?: Date) => {
     pageUuid,
     subPageUuid,
     paragraphs,
-  } = await Urls.Paragraphs.Cubes.getCubeRankUpParagraphList(isMiracle, date);
+  } = await Urls.Paragraphs.Cube.getRankUpParagraphList(isMiracle, date);
   const promiseArr = await utils.generatePromiseArr(pageUuid, subPageUuid, paragraphs);
   const res = await Promise.all(promiseArr);
   return res.map((arr) => arr.map((value) => value.data.data.probs as AutoTableItem[]));

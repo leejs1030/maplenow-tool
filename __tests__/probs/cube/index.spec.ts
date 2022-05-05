@@ -48,42 +48,42 @@ describe('test for cube', () => {
   describe('test for normal', () => {
     describe('test for rank up', () => {
       it('test for red cube', async () => {
-        const res = await Probs.Cubes.getCubeRankUpProbs(cubeNameEnum.RED);
+        const res = await Probs.Cube.getCubeRankUpProbs(cubeNameEnum.RED);
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(3);
         testRankUpWithCubeName(res, '레드 큐브');
       });
 
       it('test for black cube', async () => {
-        const res = await Probs.Cubes.getCubeRankUpProbs(cubeNameEnum.BLACK);
+        const res = await Probs.Cube.getCubeRankUpProbs(cubeNameEnum.BLACK);
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(3);
         testRankUpWithCubeName(res, '블랙 큐브');
       });
 
       it('test for addi cube', async () => {
-        const res = await Probs.Cubes.getCubeRankUpProbs(cubeNameEnum.ADDI);
+        const res = await Probs.Cube.getCubeRankUpProbs(cubeNameEnum.ADDI);
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(3);
         testRankUpWithCubeName(res, '에디셔널 큐브');
       });
 
       it('test for strange cube', async () => {
-        const res = await Probs.Cubes.getCubeRankUpProbs(cubeNameEnum.STRANGE);
+        const res = await Probs.Cube.getCubeRankUpProbs(cubeNameEnum.STRANGE);
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(1);
         testRankUpWithCubeName(res, '수상한 큐브');
       });
 
       it('test for master cube', async () => {
-        const res = await Probs.Cubes.getCubeRankUpProbs(cubeNameEnum.MASTER);
+        const res = await Probs.Cube.getCubeRankUpProbs(cubeNameEnum.MASTER);
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(2);
         testRankUpWithCubeName(res, '장인의 큐브');
       });
 
       it('test for artisan cube', async () => {
-        const res = await Probs.Cubes.getCubeRankUpProbs(cubeNameEnum.ARTISAN);
+        const res = await Probs.Cube.getCubeRankUpProbs(cubeNameEnum.ARTISAN);
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(3);
         testRankUpWithCubeName(res, '명장의 큐브');
@@ -92,49 +92,49 @@ describe('test for cube', () => {
 
     describe('test for option', () => {
       it('test for red cube', async () => {
-        const res = await Probs.Cubes.getCubeOptionProbs(cubeNameEnum.RED);
+        const res = await Probs.Cube.getCubeOptionProbs(cubeNameEnum.RED);
         const keys = Object.keys(res.second);
         expect(keys.length).toBe(4);
         testOptionWithCubeName(res, '레드 큐브');
       });
 
       it('test for black cube', async () => {
-        const res = await Probs.Cubes.getCubeOptionProbs(cubeNameEnum.BLACK);
+        const res = await Probs.Cube.getCubeOptionProbs(cubeNameEnum.BLACK);
         const keys = Object.keys(res.second);
         expect(keys.length).toBe(4);
         testOptionWithCubeName(res, '블랙 큐브');
       });
 
       it('test for addi cube', async () => {
-        const res = await Probs.Cubes.getCubeOptionProbs(cubeNameEnum.ADDI);
+        const res = await Probs.Cube.getCubeOptionProbs(cubeNameEnum.ADDI);
         const keys = Object.keys(res.second);
         expect(keys.length).toBe(4);
         testOptionWithCubeName(res, '에디셔널 큐브');
       });
 
       it('test for strange cube', async () => {
-        const res = await Probs.Cubes.getCubeOptionProbs(cubeNameEnum.STRANGE);
+        const res = await Probs.Cube.getCubeOptionProbs(cubeNameEnum.STRANGE);
         const keys = Object.keys(res.second);
         expect(keys.length).toBe(2);
         testOptionWithCubeName(res, '수상한 큐브');
       });
 
       it('test for master cube', async () => {
-        const res = await Probs.Cubes.getCubeOptionProbs(cubeNameEnum.MASTER);
+        const res = await Probs.Cube.getCubeOptionProbs(cubeNameEnum.MASTER);
         const keys = Object.keys(res.second);
         expect(keys.length).toBe(3);
         testOptionWithCubeName(res, '장인의 큐브');
       });
 
       it('test for artisan cube', async () => {
-        const res = await Probs.Cubes.getCubeOptionProbs(cubeNameEnum.ARTISAN);
+        const res = await Probs.Cube.getCubeOptionProbs(cubeNameEnum.ARTISAN);
         const keys = Object.keys(res.second);
         expect(keys.length).toBe(4);
         testOptionWithCubeName(res, '명장의 큐브');
       });
 
       it('test for strangeaddi cube', async () => {
-        const res = await Probs.Cubes.getCubeOptionProbs(cubeNameEnum.STRANGEADDI);
+        const res = await Probs.Cube.getCubeOptionProbs(cubeNameEnum.STRANGEADDI);
         const keys = Object.keys(res.second);
         expect(keys.length).toBe(1);
         testOptionWithCubeName(res, '수상한 에디셔널 큐브');
@@ -145,42 +145,42 @@ describe('test for cube', () => {
   describe('test for miracle time', () => {
     describe('test for rank up', () => {
       it('test for red cube', async () => {
-        const res = await Probs.Cubes.getCubeRankUpProbs(cubeNameEnum.RED, true);
+        const res = await Probs.Cube.getCubeRankUpProbs(cubeNameEnum.RED, true);
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(3);
         testRankUpWithCubeName(res, '레드 큐브');
       });
 
       it('test for black cube', async () => {
-        const res = await Probs.Cubes.getCubeRankUpProbs(cubeNameEnum.BLACK, true);
+        const res = await Probs.Cube.getCubeRankUpProbs(cubeNameEnum.BLACK, true);
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(3);
         testRankUpWithCubeName(res, '블랙 큐브');
       });
 
       it('test for addi cube', async () => {
-        const res = await Probs.Cubes.getCubeRankUpProbs(cubeNameEnum.ADDI, true);
+        const res = await Probs.Cube.getCubeRankUpProbs(cubeNameEnum.ADDI, true);
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(3);
         testRankUpWithCubeName(res, '에디셔널 큐브');
       });
 
       it('test for strange cube', async () => {
-        const res = await Probs.Cubes.getCubeRankUpProbs(cubeNameEnum.STRANGE, true);
+        const res = await Probs.Cube.getCubeRankUpProbs(cubeNameEnum.STRANGE, true);
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(1);
         testRankUpWithCubeName(res, '수상한 큐브');
       });
 
       it('test for master cube', async () => {
-        const res = await Probs.Cubes.getCubeRankUpProbs(cubeNameEnum.MASTER, true);
+        const res = await Probs.Cube.getCubeRankUpProbs(cubeNameEnum.MASTER, true);
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(2);
         testRankUpWithCubeName(res, '장인의 큐브');
       });
 
       it('test for artisan cube', async () => {
-        const res = await Probs.Cubes.getCubeRankUpProbs(cubeNameEnum.ARTISAN, true);
+        const res = await Probs.Cube.getCubeRankUpProbs(cubeNameEnum.ARTISAN, true);
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(3);
         testRankUpWithCubeName(res, '명장의 큐브');
@@ -189,49 +189,49 @@ describe('test for cube', () => {
 
     describe('test for option', () => {
       it('test for red cube', async () => {
-        const res = await Probs.Cubes.getCubeOptionProbs(cubeNameEnum.RED, true);
+        const res = await Probs.Cube.getCubeOptionProbs(cubeNameEnum.RED, true);
         const keys = Object.keys(res.second);
         expect(keys.length).toBe(4);
         testOptionWithCubeName(res, '레드 큐브');
       });
 
       it('test for black cube', async () => {
-        const res = await Probs.Cubes.getCubeOptionProbs(cubeNameEnum.BLACK, true);
+        const res = await Probs.Cube.getCubeOptionProbs(cubeNameEnum.BLACK, true);
         const keys = Object.keys(res.second);
         expect(keys.length).toBe(4);
         testOptionWithCubeName(res, '블랙 큐브');
       });
 
       it('test for addi cube', async () => {
-        const res = await Probs.Cubes.getCubeOptionProbs(cubeNameEnum.ADDI, true);
+        const res = await Probs.Cube.getCubeOptionProbs(cubeNameEnum.ADDI, true);
         const keys = Object.keys(res.second);
         expect(keys.length).toBe(4);
         testOptionWithCubeName(res, '에디셔널 큐브');
       });
 
       it('test for strange cube', async () => {
-        const res = await Probs.Cubes.getCubeOptionProbs(cubeNameEnum.STRANGE, true);
+        const res = await Probs.Cube.getCubeOptionProbs(cubeNameEnum.STRANGE, true);
         const keys = Object.keys(res.second);
         expect(keys.length).toBe(2);
         testOptionWithCubeName(res, '수상한 큐브');
       });
 
       it('test for master cube', async () => {
-        const res = await Probs.Cubes.getCubeOptionProbs(cubeNameEnum.MASTER, true);
+        const res = await Probs.Cube.getCubeOptionProbs(cubeNameEnum.MASTER, true);
         const keys = Object.keys(res.second);
         expect(keys.length).toBe(3);
         testOptionWithCubeName(res, '장인의 큐브');
       });
 
       it('test for artisan cube', async () => {
-        const res = await Probs.Cubes.getCubeOptionProbs(cubeNameEnum.ARTISAN, true);
+        const res = await Probs.Cube.getCubeOptionProbs(cubeNameEnum.ARTISAN, true);
         const keys = Object.keys(res.second);
         expect(keys.length).toBe(4);
         testOptionWithCubeName(res, '명장의 큐브');
       });
 
       it('test for strangeaddi cube', async () => {
-        const res = await Probs.Cubes.getCubeOptionProbs(cubeNameEnum.STRANGEADDI, true);
+        const res = await Probs.Cube.getCubeOptionProbs(cubeNameEnum.STRANGEADDI, true);
         const keys = Object.keys(res.second);
         expect(keys.length).toBe(1);
         testOptionWithCubeName(res, '수상한 에디셔널 큐브');

@@ -17,19 +17,18 @@ const getStarProbs = async (starPage: starPageEnum, date?: Date) => {
   };
 };
 
-const getStarNormalProbs = async (date?: Date) => getStarProbs(starPageEnum.normal, date);
-const getStarDiscountThirtyProbs = async (date?: Date) =>
+const getNormalProbs = async (date?: Date) => getStarProbs(starPageEnum.normal, date);
+const getDiscountThirtyProbs = async (date?: Date) =>
   getStarProbs(starPageEnum.discountThirty, date);
-const getStarMultipleFiveProbs = async (date?: Date) =>
-  getStarProbs(starPageEnum.multipleFive, date);
-const getStarUnderTenProbs = async (date?: Date) => getStarProbs(starPageEnum.underTen, date);
-const getStarShiningProbs = async (date?: Date) => getStarProbs(starPageEnum.shining, date);
+const getMultipleFiveProbs = async (date?: Date) => getStarProbs(starPageEnum.multipleFive, date);
+const getUnderTenProbs = async (date?: Date) => getStarProbs(starPageEnum.underTen, date);
+const getShiningProbs = async (date?: Date) => getStarProbs(starPageEnum.shining, date);
 
 export default {
-  getStarDiscountThirtyProbs,
-  getStarMultipleFiveProbs,
-  getStarNormalProbs,
-  getStarUnderTenProbs,
-  getStarShiningProbs,
+  getDiscountThirtyProbs,
+  getMultipleFiveProbs,
+  getNormalProbs,
+  getUnderTenProbs,
+  getShiningProbs,
   getStarProbs,
 };
