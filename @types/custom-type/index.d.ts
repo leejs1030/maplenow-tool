@@ -29,7 +29,7 @@ declare module 'custom-type' {
   }
 
   declare const enum outfitPageEnum {
-    royal,
+    royalStyle,
     red,
     black
   }

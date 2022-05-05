@@ -1,7 +1,7 @@
 import getMasterPieceProbs from './getMasterPieceProbs';
-import getRoyalProbs from './getRoyalProbs';
+import getRoyalStyleProbs from './getRoyalStyleProbs';
 
 export default {
   ...getMasterPieceProbs,
-  ...getRoyalProbs,
+  ...getRoyalStyleProbs,
 };

@@ -20,7 +20,7 @@ const testForMasterPiece = async (pieceName: masterPieceNameEnum) => {
 
 describe('test for outfit', () => {
   it('test for royal', async () => {
-    const res = await Probs.Outfits.getRoyalProbs();
+    const res = await Probs.Outfits.getRoyalStyleProbs();
     expect(Array.isArray(res.male)).toBeTruthy();
     expect(Array.isArray(res.female)).toBeTruthy();
   });

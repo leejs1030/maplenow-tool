@@ -35,7 +35,9 @@ module.exports = {
       '@config*': ['./src/config*'],
       '@errors': ['./src/errors'],
       '@urls': ['./src/urls'],
+      '@urls*': ['./src/urls*'],
       '@probs': ['./src/probs'],
+      '@probs*': ['./src/probs*'],
       //       "@probs/*": ["./src/probs/*"]
     } /* Specify a set of entries that re-map imports to additional lookup locations. */,
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */

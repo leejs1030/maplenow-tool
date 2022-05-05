@@ -1,5 +1,5 @@
 import Urls from '@urls';
-import { abilPageEnum, cubePageEnum, outfitPageEnum } from 'custom-type';
+import { abilPageEnum, beautyPageEnum, cubePageEnum, outfitPageEnum } from 'custom-type';
 
 describe('test for subpages', () => {
   it('getCubeSubPageList', async () => {
@@ -15,8 +15,20 @@ describe('test for subpages', () => {
   });
 
   it('getOutfitSubPageList', async () => {
-    const res = await Urls.SubPages.Outfits.getOutfitSubPageList(outfitPageEnum.royal);
+    const res = await Urls.SubPages.Outfits.getOutfitSubPageList(outfitPageEnum.royalStyle);
     expect(typeof res.pageUuid).toBe('string');
     expect(Array.isArray(res.subPages)).toBeTruthy();
+  });
+
+  it('getBeautySubPageList', async () => {
+    const res = await Urls.SubPages.Beauties.getBeautySubPageList(beautyPageEnum.royalHair);
+    const res1 = await Urls.SubPages.Beauties.getBeautySubPageList(beautyPageEnum.royalFace);
+    const res2 = await Urls.SubPages.Beauties.getBeautySubPageList(beautyPageEnum.changeRoyalHair);
+    const res3 = await Urls.SubPages.Beauties.getBeautySubPageList(beautyPageEnum.changeRoyalFace);
+    expect(typeof res.pageUuid).toBe('string');
+    expect(Array.isArray(res.subPages)).toBeTruthy();
+    expect(Array.isArray(res1.subPages)).toBeTruthy();
+    expect(Array.isArray(res2.subPages)).toBeTruthy();
+    expect(Array.isArray(res3.subPages)).toBeTruthy();
   });
 });

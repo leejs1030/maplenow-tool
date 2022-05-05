@@ -1,5 +1,5 @@
-import BaseProbs from '@src/probs/abil/baseProbs';
 import { successFailEnum } from 'custom-type';
+import BaseProbs from './baseProbs';
 
 const getAbilRankUpProbs = async (isPoint: boolean, date?: Date) => {
   if (isPoint) {
