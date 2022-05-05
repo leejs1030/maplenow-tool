@@ -6,6 +6,9 @@ describe('test for paragraphs', () => {
     it('normal', async () => {
       const res = await Urls.Paragraphs.Stars.getStarNormalParagraphList();
       testUuids(res);
+
+      const res1 = await Urls.Paragraphs.Stars.getStarNormalParagraphList(new Date('2022-03-03'));
+      testUuids(res1);
     });
 
     it('discount 30%', async () => {
