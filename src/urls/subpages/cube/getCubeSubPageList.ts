@@ -3,12 +3,7 @@ import axios from '@libs/axios';
 import errors from '@errors';
 import Pages from '../../pages';
 
-const getCubeSubPageList = async (
-  cubePage: cubePageEnum,
-): Promise<{
-  pageUuid: string,
-  subPages: { uuid: string, description: string }[],
-}> => {
+const getCubeSubPageList = async (cubePage: cubePageEnum) => {
   const pageList = await Pages.getPageList(pageEnum.cube);
   const pageUuid = pageList[cubePage].uuid;
   const res = await axios.get(`/pages/${pageUuid}`);
