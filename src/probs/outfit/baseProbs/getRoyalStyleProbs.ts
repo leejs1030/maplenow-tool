@@ -1,16 +1,13 @@
 import Urls from '@urls';
-import utils from '@libs/utils';
-import { AutoTableItem } from 'custom-type';
+import getBaseProbsWithUuid from '@probs/baseUuidProbs';
+import { fullUuidInfo } from 'custom-type';
 
-const getRoyalStyleProbs = async (season?: number, date?: Date) => {
-  const {
-    pageUuid,
-    subPageUuid,
-    paragraphs,
-  } = await Urls.Paragraphs.Outfit.getRoyalStyleParagraphList(season, date);
-  const promiseArr = await utils.generatePromiseArr(pageUuid, subPageUuid, paragraphs);
-  const res = await Promise.all(promiseArr);
-  return res.map((arr) => arr.map((value) => value.data.data.probs as AutoTableItem[]));
+const getRoyalStyleProbs = async (season?: number | fullUuidInfo, date?: Date) => {
+  const isNotFullUuidInfo = typeof season === 'number' || season === undefined;
+  const { pageUuid, subPageUuid, paragraphs } = isNotFullUuidInfo
+    ? await Urls.Paragraphs.Outfit.getRoyalStyleParagraphList(season, date)
+    : season;
+  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs);
 };
 
 export default {

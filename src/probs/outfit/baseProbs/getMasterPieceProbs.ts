@@ -1,16 +1,13 @@
 import Urls from '@urls';
-import { AutoTableItem, masterPieceNameEnum } from 'custom-type';
+import { masterPieceNameEnum, fullUuidInfo } from 'custom-type';
+import getBaseProbsWithUuid from '@probs/baseUuidProbs';
 import utils from '@libs/utils';
 
-const getMasterPieceProbs = async (pieceName: masterPieceNameEnum, date?: Date) => {
-  const {
-    pageUuid,
-    subPageUuid,
-    paragraphs,
-  } = await Urls.Paragraphs.Outfit.getMasterPieceParagraphList(pieceName, date);
-  const promiseArr = await utils.generatePromiseArr(pageUuid, subPageUuid, paragraphs);
-  const res = await Promise.all(promiseArr);
-  return res.map((arr) => arr.map((value) => value.data.data.probs as AutoTableItem[]));
+const getMasterPieceProbs = async (pieceName: masterPieceNameEnum, date?: Date | fullUuidInfo) => {
+  const { pageUuid, subPageUuid, paragraphs } = utils.isDate(date)
+    ? await Urls.Paragraphs.Outfit.getMasterPieceParagraphList(pieceName, date)
+    : date;
+  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs);
 };
 
 export default {

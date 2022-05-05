@@ -1,5 +1,6 @@
 import Probs from '@probs';
 import { cubeNameEnum } from 'custom-type';
+import Urls from '../../../src/urls';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const testRankUpWithCubeName = (res: any, cubeName: string) => {
@@ -54,11 +55,25 @@ describe('test for cube', () => {
         testRankUpWithCubeName(res, '레드 큐브');
       });
 
+      it('red uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getRankUpParagraphList(false);
+        const func = Probs.Cube.getRedCubeRankUpProbs;
+        const [a, b] = await Promise.all([func(false), func(false, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
       it('test for black cube', async () => {
         const res = await Probs.Cube.getCubeRankUpProbs(cubeNameEnum.BLACK);
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(3);
         testRankUpWithCubeName(res, '블랙 큐브');
+      });
+
+      it('black uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getRankUpParagraphList(false);
+        const func = Probs.Cube.getBlackCubeRankUpProbs;
+        const [a, b] = await Promise.all([func(false), func(false, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
       });
 
       it('test for addi cube', async () => {
@@ -68,11 +83,25 @@ describe('test for cube', () => {
         testRankUpWithCubeName(res, '에디셔널 큐브');
       });
 
+      it('addi uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getRankUpParagraphList(false);
+        const func = Probs.Cube.getAddiCubeRankUpProbs;
+        const [a, b] = await Promise.all([func(false), func(false, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
       it('test for strange cube', async () => {
         const res = await Probs.Cube.getCubeRankUpProbs(cubeNameEnum.STRANGE);
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(1);
         testRankUpWithCubeName(res, '수상한 큐브');
+      });
+
+      it('strange uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getRankUpParagraphList(false);
+        const func = Probs.Cube.getStrangeCubeRankUpProbs;
+        const [a, b] = await Promise.all([func(false), func(false, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
       });
 
       it('test for master cube', async () => {
@@ -82,11 +111,25 @@ describe('test for cube', () => {
         testRankUpWithCubeName(res, '장인의 큐브');
       });
 
+      it('master uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getRankUpParagraphList(false);
+        const func = Probs.Cube.getMasterCubeRankUpProbs;
+        const [a, b] = await Promise.all([func(false), func(false, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
       it('test for artisan cube', async () => {
         const res = await Probs.Cube.getCubeRankUpProbs(cubeNameEnum.ARTISAN);
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(3);
         testRankUpWithCubeName(res, '명장의 큐브');
+      });
+
+      it('artisan uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getRankUpParagraphList(false);
+        const func = Probs.Cube.getArtisanCubeRankUpProbs;
+        const [a, b] = await Promise.all([func(false), func(false, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
       });
     });
 
@@ -139,6 +182,48 @@ describe('test for cube', () => {
         expect(keys.length).toBe(1);
         testOptionWithCubeName(res, '수상한 에디셔널 큐브');
       });
+
+      it('red uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getOptionParagraphList(false);
+        const func = Probs.Cube.getRedCubeOptionProbs;
+        const [a, b] = await Promise.all([func(false), func(false, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
+      it('black uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getOptionParagraphList(false);
+        const func = Probs.Cube.getBlackCubeOptionProbs;
+        const [a, b] = await Promise.all([func(false), func(false, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
+      it('addi uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getOptionParagraphList(false);
+        const func = Probs.Cube.getAddiCubeOptionProbs;
+        const [a, b] = await Promise.all([func(false), func(false, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
+      it('master uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getOptionParagraphList(false);
+        const func = Probs.Cube.getMasterCubeOptionProbs;
+        const [a, b] = await Promise.all([func(false), func(false, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
+      it('artisan uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getOptionParagraphList(false);
+        const func = Probs.Cube.getArtisanCubeOptionProbs;
+        const [a, b] = await Promise.all([func(false), func(false, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
+      it('strangeaddi uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getOptionParagraphList(false);
+        const func = Probs.Cube.getStrangeaddiCubeOptionProbs;
+        const [a, b] = await Promise.all([func(false), func(false, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
     });
   });
 
@@ -184,6 +269,41 @@ describe('test for cube', () => {
         const keys = Object.keys(res.to);
         expect(keys.length).toBe(3);
         testRankUpWithCubeName(res, '명장의 큐브');
+      });
+
+      it('red uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getRankUpParagraphList(true);
+        const func = Probs.Cube.getRedCubeRankUpProbs;
+        const [a, b] = await Promise.all([func(true), func(true, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
+      it('black uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getRankUpParagraphList(true);
+        const func = Probs.Cube.getBlackCubeRankUpProbs;
+        const [a, b] = await Promise.all([func(true), func(true, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
+      it('addi uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getRankUpParagraphList(true);
+        const func = Probs.Cube.getAddiCubeRankUpProbs;
+        const [a, b] = await Promise.all([func(true), func(true, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
+      it('master uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getRankUpParagraphList(true);
+        const func = Probs.Cube.getMasterCubeRankUpProbs;
+        const [a, b] = await Promise.all([func(true), func(true, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
+      it('artisan uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getRankUpParagraphList(true);
+        const func = Probs.Cube.getArtisanCubeRankUpProbs;
+        const [a, b] = await Promise.all([func(true), func(true, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
       });
     });
 
@@ -235,6 +355,48 @@ describe('test for cube', () => {
         const keys = Object.keys(res.second);
         expect(keys.length).toBe(1);
         testOptionWithCubeName(res, '수상한 에디셔널 큐브');
+      });
+
+      it('red uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getOptionParagraphList(true);
+        const func = Probs.Cube.getRedCubeOptionProbs;
+        const [a, b] = await Promise.all([func(true), func(true, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
+      it('black uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getOptionParagraphList(true);
+        const func = Probs.Cube.getBlackCubeOptionProbs;
+        const [a, b] = await Promise.all([func(true), func(true, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
+      it('addi uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getOptionParagraphList(true);
+        const func = Probs.Cube.getAddiCubeOptionProbs;
+        const [a, b] = await Promise.all([func(true), func(true, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
+      it('master uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getOptionParagraphList(true);
+        const func = Probs.Cube.getMasterCubeOptionProbs;
+        const [a, b] = await Promise.all([func(true), func(true, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
+      it('artisan uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getOptionParagraphList(true);
+        const func = Probs.Cube.getArtisanCubeOptionProbs;
+        const [a, b] = await Promise.all([func(true), func(true, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+
+      it('strangeaddi uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Cube.getOptionParagraphList(true);
+        const func = Probs.Cube.getStrangeaddiCubeOptionProbs;
+        const [a, b] = await Promise.all([func(true), func(true, uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
       });
     });
   });

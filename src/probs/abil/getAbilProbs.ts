@@ -1,7 +1,7 @@
-import { successFailEnum } from 'custom-type';
+import { fullUuidInfo, successFailEnum } from 'custom-type';
 import BaseProbs from './baseProbs';
 
-const getAbilRankUpProbs = async (isPoint: boolean, date?: Date) => {
+const getAbilRankUpProbs = async (isPoint: boolean, date?: Date | fullUuidInfo) => {
   if (isPoint) {
     const res = (await BaseProbs.getAbilPointProbs(date))[0];
     return {
@@ -36,7 +36,7 @@ const getAbilRankUpProbs = async (isPoint: boolean, date?: Date) => {
   };
 };
 
-const getAbilOptionProbs = async (isPoint: boolean, date?: Date) => {
+const getAbilOptionProbs = async (isPoint: boolean, date?: Date | fullUuidInfo) => {
   if (isPoint) {
     const res = (await BaseProbs.getAbilPointProbs(date))[1];
     return {
@@ -79,10 +79,12 @@ const getAbilOptionProbs = async (isPoint: boolean, date?: Date) => {
   };
 };
 
-const getPointRankUpProbs = async (date?: Date) => getAbilRankUpProbs(true, date);
-const getPointOptionProbs = async (date?: Date) => getAbilOptionProbs(true, date);
-const getCirculatorRankUpProbs = async (date?: Date) => getAbilRankUpProbs(false, date);
-const getCirculatorOptionProbs = async (date?: Date) => getAbilOptionProbs(false, date);
+const getPointRankUpProbs = async (date?: Date | fullUuidInfo) => getAbilRankUpProbs(true, date);
+const getPointOptionProbs = async (date?: Date | fullUuidInfo) => getAbilOptionProbs(true, date);
+const getCirculatorRankUpProbs = async (date?: Date | fullUuidInfo) =>
+  getAbilRankUpProbs(false, date);
+const getCirculatorOptionProbs = async (date?: Date | fullUuidInfo) =>
+  getAbilOptionProbs(false, date);
 
 export default {
   getPointRankUpProbs,

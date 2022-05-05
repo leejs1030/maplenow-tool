@@ -1,6 +1,6 @@
 import axios from '@libs/axios';
 import errors from '@errors';
-import { AutoTable } from 'custom-type';
+import { paragraphsType } from 'custom-type';
 
 const getParagraphsByUuid = async (pageUuid: string, subPageUuid: string) => {
   const res = await axios.get(`/pages/${pageUuid}?subPageUuid=${subPageUuid}`);
@@ -8,7 +8,7 @@ const getParagraphsByUuid = async (pageUuid: string, subPageUuid: string) => {
   return {
     pageUuid,
     subPageUuid,
-    paragraphs: (res.data.data.selectedSubPage.paragraphs as {uuid: string, autoTable: AutoTable}[])
+    paragraphs: (res.data.data.selectedSubPage.paragraphs as paragraphsType)
       .filter((value) => value.autoTable)
       .map((value) => ({ uuid: value.uuid, autoTable: value.autoTable })),
   };

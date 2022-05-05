@@ -1,16 +1,13 @@
 import Urls from '@urls';
+import { starPageEnum, fullUuidInfo } from 'custom-type';
+import getBaseProbsWithUuid from '@probs/baseUuidProbs';
 import utils from '@libs/utils';
-import { AutoTableItem, starPageEnum } from 'custom-type';
 
-const getStarProbs = async (starPage: starPageEnum, date?: Date) => {
-  const {
-    pageUuid,
-    subPageUuid,
-    paragraphs,
-  } = await Urls.Paragraphs.Star.getStarParagraphList(starPage, date);
-  const promiseArr = await utils.generatePromiseArr(pageUuid, subPageUuid, paragraphs);
-  const res = await Promise.all(promiseArr);
-  return res.map((arr) => arr.map((value) => value.data.data.probs as AutoTableItem[]));
+const getStarProbs = async (starPage: starPageEnum, date?: Date | fullUuidInfo) => {
+  const { pageUuid, subPageUuid, paragraphs } = utils.isDate(date)
+    ? await Urls.Paragraphs.Star.getStarParagraphList(starPage, date)
+    : date;
+  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs);
 };
 
 export default {

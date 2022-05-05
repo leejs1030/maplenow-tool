@@ -1,4 +1,4 @@
-import { cubeNameEnum } from 'custom-type';
+import { cubeNameEnum, fullUuidInfo } from 'custom-type';
 import errors from '@errors';
 import getRedCubeProbs from './getRedCubeProbs';
 import getBlackCubeProbs from './getBlackCubeProbs';
@@ -8,7 +8,11 @@ import getMasterCubeProbs from './getMasterCubeProbs';
 import getArtisanCubeProbs from './getArtisanCubeProbs';
 import getStrangeaddiCubeProbs from './getStrangeaddiCubeProbs';
 
-const getCubeRankUpProbs = async (cubeName: cubeNameEnum, isMiracle?: boolean, date?: Date) => {
+const getCubeRankUpProbs = async (
+  cubeName: cubeNameEnum,
+  isMiracle?: boolean,
+  date?: Date | fullUuidInfo,
+) => {
   isMiracle = !!isMiracle; // eslint-disable-line no-param-reassign
   switch (cubeName) {
     case cubeNameEnum.RED:
@@ -28,7 +32,11 @@ const getCubeRankUpProbs = async (cubeName: cubeNameEnum, isMiracle?: boolean, d
   }
 };
 
-const getCubeOptionProbs = async (cubeName: cubeNameEnum, isMiracle?: boolean, date?: Date) => {
+const getCubeOptionProbs = async (
+  cubeName: cubeNameEnum,
+  isMiracle?: boolean,
+  date?: Date | fullUuidInfo,
+) => {
   isMiracle = !!isMiracle; // eslint-disable-line no-param-reassign
   switch (cubeName) {
     case cubeNameEnum.RED:

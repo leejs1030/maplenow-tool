@@ -1,3 +1,5 @@
+import { fullUuidInfo } from 'custom-type';
+
 const translateDateToDescriptions = (date: Date) =>
   `${date.getFullYear()}년 ${date.getMonth()}월 ${date.getDay()}일 업데이트`;
 
@@ -14,7 +16,11 @@ const translateDescriptionToDate = (description: string) => {
   return new Date(`${year}-${monthString}-${dayString}`);
 };
 
+const isDate = (date: Date | undefined | fullUuidInfo): date is Date | undefined =>
+  date === undefined || date instanceof Date;
+
 export default {
   translateDateToDescriptions,
   translateDescriptionToDate,
+  isDate,
 };

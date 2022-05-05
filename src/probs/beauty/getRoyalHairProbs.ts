@@ -1,6 +1,7 @@
+import { fullUuidInfo } from 'custom-type';
 import BaseProbs from './baseProbs';
 
-const getRoyalHairProbs = async (year?: number, month?: number | string) => {
+const getRoyalHairProbs = async (year?: number | fullUuidInfo, month?: number | string) => {
   const res = await BaseProbs.getRoyalHairProbs(false, year, month);
   return {
     male: res[0][0],
@@ -8,7 +9,7 @@ const getRoyalHairProbs = async (year?: number, month?: number | string) => {
   };
 };
 
-const getRoyalChangeHairProbs = async (year?: number, month?: number | string) => {
+const getRoyalChangeHairProbs = async (year?: number | fullUuidInfo, month?: number | string) => {
   const res = await BaseProbs.getRoyalHairProbs(true, year, month);
   return {
     male: res[0][0],
