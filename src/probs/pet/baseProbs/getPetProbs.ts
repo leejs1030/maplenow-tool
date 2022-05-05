@@ -1,12 +1,12 @@
 import Urls from '@urls';
-import { petPageEnum } from 'custom-type';
+import { petPageEnum, fullUuidInfo } from 'custom-type';
 import getBaseProbsWithUuid from '@probs/baseUuidProbs';
+import utils from '@libs/utils';
 
-const getPetProbs = async (petPage: petPageEnum, date?: Date) => {
-  const { pageUuid, subPageUuid, paragraphs } = await Urls.Paragraphs.Pet.getPetParagraphList(
-    petPage,
-    date,
-  );
+const getPetProbs = async (petPage: petPageEnum, date?: Date | fullUuidInfo) => {
+  const { pageUuid, subPageUuid, paragraphs } = utils.isDate(date)
+    ? await Urls.Paragraphs.Pet.getPetParagraphList(petPage, date)
+    : date;
   return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs);
 };
 
