@@ -1,5 +1,12 @@
 import Urls from '@urls';
-import { abilPageEnum, beautyPageEnum, cubePageEnum, outfitPageEnum } from 'custom-type';
+import {
+  abilPageEnum,
+  beautyPageEnum,
+  cubePageEnum,
+  outfitPageEnum,
+  petPageEnum,
+  starPageEnum,
+} from 'custom-type';
 
 describe('test for subpages', () => {
   it('getCubeSubPageList', async () => {
@@ -30,5 +37,25 @@ describe('test for subpages', () => {
     expect(Array.isArray(res1.subPages)).toBeTruthy();
     expect(Array.isArray(res2.subPages)).toBeTruthy();
     expect(Array.isArray(res3.subPages)).toBeTruthy();
+  });
+
+  it('getStarSubPageList', async () => {
+    const normal = await Urls.SubPages.Stars.getStarSubPageList(starPageEnum.normal);
+    expect(typeof normal.pageUuid).toBe('string');
+    expect(Array.isArray(normal.subPages)).toBeTruthy();
+    const discountThirty = await Urls.SubPages.Stars.getStarSubPageList(
+      starPageEnum.discountThirty,
+    );
+    expect(typeof discountThirty.pageUuid).toBe('string');
+    expect(Array.isArray(discountThirty.subPages)).toBeTruthy();
+    const multipleFive = await Urls.SubPages.Stars.getStarSubPageList(starPageEnum.multipleFive);
+    expect(typeof multipleFive.pageUuid).toBe('string');
+    expect(Array.isArray(multipleFive.subPages)).toBeTruthy();
+    const underTen = await Urls.SubPages.Stars.getStarSubPageList(starPageEnum.underTen);
+    expect(typeof underTen.pageUuid).toBe('string');
+    expect(Array.isArray(underTen.subPages)).toBeTruthy();
+    const shining = await Urls.SubPages.Stars.getStarSubPageList(starPageEnum.shining);
+    expect(typeof shining.pageUuid).toBe('string');
+    expect(Array.isArray(shining.subPages)).toBeTruthy();
   });
 });

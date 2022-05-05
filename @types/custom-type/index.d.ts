@@ -49,6 +49,7 @@ declare module 'custom-type' {
 
   declare const enum starPageEnum {
     normal,
+    discountThirty,
     multipleFive,
     underTen,
     shining
