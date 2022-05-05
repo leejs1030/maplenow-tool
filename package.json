@@ -2,6 +2,7 @@
   "name": "maplenow-tool",
   "version": "1.0.0",
   "description": "easier way to use nexon-now api for maplestory",
+  "types": "index.d.ts",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",

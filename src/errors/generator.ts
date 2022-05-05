@@ -1,4 +1,4 @@
-const errorGenerator = (name: string, code: number, message: string) => {
+const errorGenerator = (name: string, code: number, message: string): any => {
   class NewError extends Error {
     code: number;
 
