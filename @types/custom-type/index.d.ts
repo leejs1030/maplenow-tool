@@ -13,7 +13,7 @@ declare module 'custom-type' {
     outfit,
     beauty,
     pet,
-    star
+    star,
   }
 
   declare const enum cubePageEnum {
@@ -25,13 +25,13 @@ declare module 'custom-type' {
 
   declare const enum abilPageEnum {
     point,
-    circulator
+    circulator,
   }
 
   declare const enum outfitPageEnum {
     royalStyle,
     red,
-    black
+    black,
   }
 
   declare const enum beautyPageEnum {
@@ -44,7 +44,7 @@ declare module 'custom-type' {
   declare const enum petPageEnum {
     wonderBerry,
     crystalSweet,
-    crystalDream
+    crystalDream,
   }
 
   declare const enum starPageEnum {
@@ -52,7 +52,7 @@ declare module 'custom-type' {
     discountThirty,
     multipleFive,
     underTen,
-    shining
+    shining,
   }
 
   declare const enum cubeOrderEnum {
@@ -62,7 +62,7 @@ declare module 'custom-type' {
     strange,
     master,
     artisan,
-    strangeaddi
+    strangeaddi,
   }
 
   declare const enum cubeRankOrderEnum {
@@ -81,61 +81,61 @@ declare module 'custom-type' {
     artisanToEpic,
     artisanToUnique,
     artisanToLegendary,
-    strangeAddiToEpic
+    strangeAddiToEpic,
   }
 
   declare interface AutoTable {
-    header: string,
-    footer: string,
-    themeName: string,
-    contentColActive: boolean,
-    contentColAlias: any, // eslint-disable-line @typescript-eslint/no-explicit-any
-    contentColMergeCells: boolean,
-    trialColActive: boolean,
-    trialColAlias: any, // eslint-disable-line @typescript-eslint/no-explicit-any
-    trialColMergeCells: boolean,
-    probtableColActive: boolean,
-    probtableColAlias: string,
-    probtableColMergeCells: boolean,
-    trialresultColActive: boolean,
-    trialresultColAlias: string,
-    countColActive: boolean,
-    countColAlias: string,
-    probColActive: boolean,
-    probColAlias: string,
-    realProbColActive: boolean,
-    realProbColAlias: string,
-    columnOrder: { columnId: string, customColumn: boolean }[],
-    showRealProbSearchDtRange: boolean,
-    showRealProbUpdateDt: boolean,
-    usedProbtables: { contentid: string, trialid: string, probtableid: string }[],
-    realProbSearchDateRangeExposureMode: string,
-    allowTableToggle: boolean,
-    customColumns: any[], // eslint-disable-line @typescript-eslint/no-explicit-any
-    showProbVersionCreateDate: boolean,
-    probVersionCreateDate: any, // eslint-disable-line @typescript-eslint/no-explicit-any
-    realprobWarningMode: string,
+    header: string;
+    footer: string;
+    themeName: string;
+    contentColActive: boolean;
+    contentColAlias: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    contentColMergeCells: boolean;
+    trialColActive: boolean;
+    trialColAlias: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    trialColMergeCells: boolean;
+    probtableColActive: boolean;
+    probtableColAlias: string;
+    probtableColMergeCells: boolean;
+    trialresultColActive: boolean;
+    trialresultColAlias: string;
+    countColActive: boolean;
+    countColAlias: string;
+    probColActive: boolean;
+    probColAlias: string;
+    realProbColActive: boolean;
+    realProbColAlias: string;
+    columnOrder: { columnId: string; customColumn: boolean }[];
+    showRealProbSearchDtRange: boolean;
+    showRealProbUpdateDt: boolean;
+    usedProbtables: { contentid: string; trialid: string; probtableid: string }[];
+    realProbSearchDateRangeExposureMode: string;
+    allowTableToggle: boolean;
+    customColumns: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
+    showProbVersionCreateDate: boolean;
+    probVersionCreateDate: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    realprobWarningMode: string;
   }
 
   declare interface AutoTableItem {
-    content_name: string,
-    trialid_name: string,
-    probtable_name: string,
-    trialresult_name: string,
-    prob: string,
-    custom_columns: any, // eslint-disable-line @typescript-eslint/no-explicit-any
-    count: number,
-    realprob: string,
-    windowStart: any, // eslint-disable-line @typescript-eslint/no-explicit-any
-    windowEnd: string,
-    updateDt: string,
-    showRealprobWarning: boolean
+    content_name: string;
+    trialid_name: string;
+    probtable_name: string;
+    trialresult_name: string;
+    prob: string;
+    custom_columns: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    count: number;
+    realprob: string;
+    windowStart: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    windowEnd: string;
+    updateDt: string;
+    showRealprobWarning: boolean;
   }
 
   declare interface probInfo {
-    contentid: string,
-    trialid: string,
-    probtableid: string,
+    contentid: string;
+    trialid: string;
+    probtableid: string;
   }
 
   declare const enum cubeNameEnum {
@@ -145,25 +145,31 @@ declare module 'custom-type' {
     STRANGE = 'strange',
     MASTER = 'master',
     ARTISAN = 'artisan',
-    STRANGEADDI = 'strangeaddi'
+    STRANGEADDI = 'strangeaddi',
   }
 
   declare const enum successFailEnum {
     success,
-    fail
+    fail,
   }
 
   declare const enum abilRankOrderEnum {
     rare,
     epic,
     unique,
-    legendary
+    legendary,
   }
 
   declare const enum masterPieceNameEnum {
     red = 'red',
-    black = 'black'
+    black = 'black',
   }
 
-  declare type paragraphsType = {uuid: string, autoTable: AutoTable}[];
+  declare type paragraphsType = { uuid: string; autoTable: AutoTable }[];
+
+  declare interface fullUuidInfo {
+    pageUuid: string;
+    subPageUuid: string;
+    paragraphs: paragraphsType;
+  }
 }
