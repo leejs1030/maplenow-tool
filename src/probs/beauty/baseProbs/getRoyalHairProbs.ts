@@ -1,6 +1,6 @@
-import Urls from '@urls';
-import getBaseProbsWithUuid from '@probs/baseUuidProbs';
 import { fullUuidInfo } from 'custom-type';
+import Urls from '../../../urls';
+import getBaseProbsWithUuid from '../../baseUuidProbs';
 
 const getRoyalHairProbs = async (
   isChange: boolean,

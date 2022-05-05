@@ -1,6 +1,6 @@
 import { outfitPageEnum, pageEnum } from 'custom-type';
-import axios from '@libs/axios';
-import errors from '@errors';
+import axios from '../../../libs/axios';
+import errors from '../../../errors';
 import Pages from '../../pages';
 
 const getOutfitSubPageList = async (outfitPage: outfitPageEnum) => {

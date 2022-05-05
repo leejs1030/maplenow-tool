@@ -1,5 +1,5 @@
 import { AutoTableItem, paragraphsType } from 'custom-type';
-import utils from '@libs/utils';
+import utils from '../libs/utils';
 
 const getBaseProbsWithUuid = async (
   pageUuid: string,

@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosRequestHeaders, AxiosResponse } from 'axios';
-import { USER_AGENT, BASE_URL } from '@config/constants';
+import { USER_AGENT, BASE_URL } from '../../config/constants';
 
 class MyAxios {
   private DEFAULT_HEADER: AxiosRequestHeaders = {

@@ -1,5 +1,5 @@
-import axios from '@libs/axios';
-import errors from '@errors';
+import axios from '../../libs/axios';
+import errors from '../../errors';
 
 const getMenu = async () =>
   axios.get('/menus').then((data) => {

@@ -1,5 +1,5 @@
-import Subpages from '@urls/subpages';
 import { petPageEnum } from 'custom-type';
+import Subpages from '../../subpages';
 import baseParagraphs from '../baseParagraphs';
 
 const getStarParagraphList = async (petPage: petPageEnum, date?: Date) => {

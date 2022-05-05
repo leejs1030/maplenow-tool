@@ -1,6 +1,6 @@
-import axios from '@libs/axios';
-import errors from '@errors';
 import { paragraphsType } from 'custom-type';
+import axios from '../../../libs/axios';
+import errors from '../../../errors';
 
 const getParagraphsByUuid = async (pageUuid: string, subPageUuid: string) => {
   const res = await axios.get(`/pages/${pageUuid}?subPageUuid=${subPageUuid}`);
