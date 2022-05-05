@@ -164,4 +164,6 @@ declare module 'custom-type' {
     red = 'red',
     black = 'black'
   }
+
+  declare type paragraphsType = {uuid: string, autoTable: AutoTable}[];
 }
