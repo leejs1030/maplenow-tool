@@ -3,7 +3,7 @@ const translateDateToDescriptions = (date: Date) =>
 
 const translateDescriptionToDate = (description: string) => {
   const yend = description.indexOf('년');
-  const year = parseInt(description.slice(0, yend), 10);
+  const year = parseInt(description.slice(yend - 4, yend), 10);
   const mend = description.indexOf('월');
   const month = parseInt(description.slice(yend + 1, mend), 10);
   const dend = description.indexOf('일');
