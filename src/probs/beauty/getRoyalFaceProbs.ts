@@ -1,18 +1,18 @@
 import BaseProbs from './baseProbs';
 
 const getRoyalFaceProbs = async (date?: Date) => {
-  const res = (await BaseProbs.getRoyalFaceProbs(false, date))[0];
+  const res = await BaseProbs.getRoyalFaceProbs(false, date);
   return {
-    male: res[0],
-    female: res[1],
+    male: res[0][0],
+    female: res[1][0],
   };
 };
 
 const getRoyalChangeFaceProbs = async (date?: Date) => {
-  const res = (await BaseProbs.getRoyalFaceProbs(true, date))[0];
+  const res = await BaseProbs.getRoyalFaceProbs(true, date);
   return {
-    male: res[0],
-    female: res[1],
+    male: res[0][0],
+    female: res[1][0],
   };
 };
 
