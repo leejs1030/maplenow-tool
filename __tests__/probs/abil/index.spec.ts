@@ -48,22 +48,22 @@ const testForOption = (res: any, isPoint: boolean) => {
 describe('test for abil', () => {
   describe('test for point', () => {
     it('test for point rank up', async () => {
-      const res = await Probs.Abil.getAbilPointRankUpProbs();
+      const res = await Probs.Abil.getPointRankUpProbs();
       testForRankUp(res, true);
     });
 
     it('test for point option', async () => {
-      const res = await Probs.Abil.getAbilPointOptionProbs();
+      const res = await Probs.Abil.getPointOptionProbs();
       testForOption(res, true);
     });
 
     it('test for circulator rank up', async () => {
-      const res = await Probs.Abil.getAbilCirculatorRankUpProbs();
+      const res = await Probs.Abil.getCirculatorRankUpProbs();
       testForRankUp(res, false);
     });
 
     it('test for circulator option', async () => {
-      const res = await Probs.Abil.getAbilCirculatorOptionProbs();
+      const res = await Probs.Abil.getCirculatorOptionProbs();
       testForOption(res, false);
     });
   });

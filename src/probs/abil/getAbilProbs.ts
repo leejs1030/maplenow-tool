@@ -79,14 +79,14 @@ const getAbilOptionProbs = async (isPoint: boolean, date?: Date) => {
   };
 };
 
-const getAbilPointRankUpProbs = async (date?: Date) => getAbilRankUpProbs(true, date);
-const getAbilPointOptionProbs = async (date?: Date) => getAbilOptionProbs(true, date);
-const getAbilCirculatorRankUpProbs = async (date?: Date) => getAbilRankUpProbs(false, date);
-const getAbilCirculatorOptionProbs = async (date?: Date) => getAbilOptionProbs(false, date);
+const getPointRankUpProbs = async (date?: Date) => getAbilRankUpProbs(true, date);
+const getPointOptionProbs = async (date?: Date) => getAbilOptionProbs(true, date);
+const getCirculatorRankUpProbs = async (date?: Date) => getAbilRankUpProbs(false, date);
+const getCirculatorOptionProbs = async (date?: Date) => getAbilOptionProbs(false, date);
 
 export default {
-  getAbilPointRankUpProbs,
-  getAbilPointOptionProbs,
-  getAbilCirculatorRankUpProbs,
-  getAbilCirculatorOptionProbs,
+  getPointRankUpProbs,
+  getPointOptionProbs,
+  getCirculatorRankUpProbs,
+  getCirculatorOptionProbs,
 };
