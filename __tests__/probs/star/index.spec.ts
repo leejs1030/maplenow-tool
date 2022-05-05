@@ -30,7 +30,7 @@ describe('test for star', () => {
     expect(res1.catch[0].success.probtable_name).toBe('0성');
     expect(res1.noCatch[0].success.probtable_name).toBe('0성');
     expect(res1.catch[0].success.count).toBe(136962);
-    expect(res1.noCatch[0].success.count).toBe(317);
+    expect(res1.catch[0].fail.count).toBe(317);
   });
 
   it('test for multipleFive', async () => {
