@@ -1,6 +1,7 @@
+import { fullUuidInfo } from 'custom-type';
 import BaseProbs from './baseProbs';
 
-const getRoyalStyleProbs = async (season?: number, date?: Date) => {
+const getRoyalStyleProbs = async (season?: number | fullUuidInfo, date?: Date) => {
   const res = await BaseProbs.getRoyalStyleProbs(season, date);
   return {
     male: res[0],

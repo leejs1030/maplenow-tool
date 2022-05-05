@@ -1,7 +1,7 @@
-import { masterPieceNameEnum } from 'custom-type';
+import { fullUuidInfo, masterPieceNameEnum } from 'custom-type';
 import BaseProbs from './baseProbs';
 
-const getMasterPieceProbs = async (pieceName: masterPieceNameEnum, date?: Date) => {
+const getMasterPieceProbs = async (pieceName: masterPieceNameEnum, date?: Date | fullUuidInfo) => {
   const res = await BaseProbs.getMasterPieceProbs(pieceName, date);
   return {
     male: {
@@ -21,8 +21,9 @@ const getMasterPieceProbs = async (pieceName: masterPieceNameEnum, date?: Date) 
   };
 };
 
-const getRedPieceProbs = async (date?: Date) => getMasterPieceProbs(masterPieceNameEnum.red, date);
-const getBlackPieceProbs = async (date?: Date) =>
+const getRedPieceProbs = async (date?: Date | fullUuidInfo) =>
+  getMasterPieceProbs(masterPieceNameEnum.red, date);
+const getBlackPieceProbs = async (date?: Date | fullUuidInfo) =>
   getMasterPieceProbs(masterPieceNameEnum.black, date);
 
 export default {
