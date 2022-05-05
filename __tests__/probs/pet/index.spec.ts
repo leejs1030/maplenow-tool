@@ -20,7 +20,7 @@ describe('test for star', () => {
       console.log('ok!'); // eslint-disable-line no-console
       return;
     }
-    throw new Error();
+    throw new Error('It should throw date error!');
   });
 
   it('crystal sweet current', async () => {
