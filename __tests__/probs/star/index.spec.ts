@@ -2,11 +2,11 @@ import Probs from '@probs';
 
 describe('test for star', () => {
   it('test for normal', async () => {
-    const res = await Probs.Stars.getStarNormalProbs();
+    const res = await Probs.Star.getNormalProbs();
     expect(res.catch[0].success.probtable_name).toBe('0성');
     expect(res.noCatch[0].success.probtable_name).toBe('0성');
 
-    const res1 = await Probs.Stars.getStarNormalProbs(new Date('2022-04-21'));
+    const res1 = await Probs.Star.getNormalProbs(new Date('2022-04-21'));
     expect(res1.catch[0].success.probtable_name).toBe('0성');
     expect(res1.noCatch[0].success.probtable_name).toBe('0성');
     expect(res1.catch[0].success.count).toBe(12394);
@@ -22,11 +22,11 @@ describe('test for star', () => {
   });
 
   it('test for 30% discount', async () => {
-    const res = await Probs.Stars.getStarDiscountThirtyProbs();
+    const res = await Probs.Star.getDiscountThirtyProbs();
     expect(res.catch[0].success.probtable_name).toBe('0성');
     expect(res.noCatch[0].success.probtable_name).toBe('0성');
 
-    const res1 = await Probs.Stars.getStarDiscountThirtyProbs(new Date('2022-04-21'));
+    const res1 = await Probs.Star.getDiscountThirtyProbs(new Date('2022-04-21'));
     expect(res1.catch[0].success.probtable_name).toBe('0성');
     expect(res1.noCatch[0].success.probtable_name).toBe('0성');
     expect(res1.catch[0].success.count).toBe(136962);
@@ -34,19 +34,19 @@ describe('test for star', () => {
   });
 
   it('test for multipleFive', async () => {
-    const res = await Probs.Stars.getStarMultipleFiveProbs();
+    const res = await Probs.Star.getMultipleFiveProbs();
     expect(res.catch[0].success.probtable_name).toBe('0성');
     expect(res.noCatch[0].success.probtable_name).toBe('0성');
   });
 
   it('test for underTen', async () => {
-    const res = await Probs.Stars.getStarUnderTenProbs();
+    const res = await Probs.Star.getUnderTenProbs();
     expect(res.catch[0].success.probtable_name).toBe('0성');
     expect(res.noCatch[0].success.probtable_name).toBe('0성');
   });
 
   it('test for underTen', async () => {
-    const res = await Probs.Stars.getStarShiningProbs();
+    const res = await Probs.Star.getShiningProbs();
     expect(res.catch[0].success.probtable_name).toBe('0성');
     expect(res.noCatch[0].success.probtable_name).toBe('0성');
   });

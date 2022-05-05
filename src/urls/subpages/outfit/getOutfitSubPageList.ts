@@ -3,12 +3,7 @@ import axios from '@libs/axios';
 import errors from '@errors';
 import Pages from '../../pages';
 
-const getOutfitSubPageList = async (
-  outfitPage: outfitPageEnum,
-): Promise<{
-  pageUuid: string,
-  subPages: { uuid: string, description: string }[],
-}> => {
+const getOutfitSubPageList = async (outfitPage: outfitPageEnum) => {
   const pageList = await Pages.getPageList(pageEnum.outfit);
   const pageUuid = pageList[outfitPage].uuid;
   const res = await axios.get(`/pages/${pageUuid}`);

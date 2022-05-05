@@ -7,7 +7,7 @@ const getMasterPieceProbs = async (pieceName: masterPieceNameEnum, date?: Date) 
     pageUuid,
     subPageUuid,
     paragraphs,
-  } = await Urls.Paragraphs.Outfits.getMasterPieceParagraphList(pieceName, date);
+  } = await Urls.Paragraphs.Outfit.getMasterPieceParagraphList(pieceName, date);
   const promiseArr = await utils.generatePromiseArr(pageUuid, subPageUuid, paragraphs);
   const res = await Promise.all(promiseArr);
   return res.map((arr) => arr.map((value) => value.data.data.probs as AutoTableItem[]));
