@@ -18,4 +18,5 @@ export default {
   getStarMultipleFiveParagraphList,
   getStarShiningParagraphList,
   getStarUnderTenParagraphList,
+  getStarParagraphList,
 };
