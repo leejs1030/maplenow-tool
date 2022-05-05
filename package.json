@@ -1,12 +1,13 @@
 {
   "name": "maplenow-tool",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "easier way to use nexon-now api for maplestory",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest --no-cache"
   },
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leejs1030/maplenow-tool.git"
