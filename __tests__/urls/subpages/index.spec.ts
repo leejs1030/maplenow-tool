@@ -39,6 +39,18 @@ describe('test for subpages', () => {
     expect(Array.isArray(res3.subPages)).toBeTruthy();
   });
 
+  it('getPetSubPageList', async () => {
+    const wonder = await Urls.SubPages.Pets.getStarSubPageList(petPageEnum.wonderBerry);
+    expect(typeof wonder.pageUuid).toBe('string');
+    expect(Array.isArray(wonder.subPages)).toBeTruthy();
+    const sweet = await Urls.SubPages.Pets.getStarSubPageList(petPageEnum.crystalSweet);
+    expect(typeof sweet.pageUuid).toBe('string');
+    expect(Array.isArray(sweet.subPages)).toBeTruthy();
+    const dream = await Urls.SubPages.Pets.getStarSubPageList(petPageEnum.crystalDream);
+    expect(typeof dream.pageUuid).toBe('string');
+    expect(Array.isArray(dream.subPages)).toBeTruthy();
+  });
+
   it('getStarSubPageList', async () => {
     const normal = await Urls.SubPages.Stars.getStarSubPageList(starPageEnum.normal);
     expect(typeof normal.pageUuid).toBe('string');
