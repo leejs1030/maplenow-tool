@@ -1,20 +1,11 @@
 import { cubePageEnum } from 'custom-type';
-import utils from '@libs/utils';
-import errors from '@errors';
-import baseParagraphs from '@src/urls/paragraphs/baseParagraphs';
-import Subpages from '../../subpages';
+import Subpages from '@urls/subpages';
+import baseParagraphs from '../baseParagraphs';
 
 const getCubePragraphList = async (isMiracle: boolean, selected: cubePageEnum, date?: Date) => {
   const { pageUuid, subPages } = await Subpages.Cubes.getCubeSubPageList(selected);
-  let newDate;
-  if (!date) newDate = new Date();
-  else newDate = new Date(date);
-  let i;
-  for (i = 0; i < subPages.length; i += 1)
-    if (utils.translateDescriptionToDate(subPages[i].description) <= newDate) break;
-  if (isMiracle) i = 0;
-  else if (i >= subPages.length) throw new errors.InvalidDateError();
-  return baseParagraphs.getParagraphsByUuid(pageUuid, subPages[i].uuid);
+  if (subPages.length <= 1) return baseParagraphs.getParagraphsByUuid(pageUuid, subPages[0].uuid);
+  return baseParagraphs.compareWithDateAndGetParagraphs(pageUuid, subPages, date);
 };
 
 const getCubeRankUpParagraphList = async (isMiracle: boolean, date?: Date) => {

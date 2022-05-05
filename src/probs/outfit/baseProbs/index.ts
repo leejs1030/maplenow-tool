@@ -1,4 +1,4 @@
-import getCubeOptionProbs from './getRoyalProbs';
+import getCubeOptionProbs from './getRoyalStyleProbs';
 import getCubeRankUpProbs from './getMasterPieceProbs';
 
 export default {
