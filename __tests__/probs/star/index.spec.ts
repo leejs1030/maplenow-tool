@@ -1,4 +1,5 @@
 import Probs from '@probs';
+import Urls from '@urls';
 
 describe('test for star', () => {
   it('test for normal', async () => {
@@ -22,7 +23,10 @@ describe('test for star', () => {
   });
 
   it('test for 30% discount', async () => {
+    const uuidInfos = await Urls.Paragraphs.Star.getDiscountThirtyParagraphList();
+    const getByUuid = await Probs.Star.getDiscountThirtyProbs(uuidInfos);
     const res = await Probs.Star.getDiscountThirtyProbs();
+    expect(JSON.stringify(getByUuid)).toBe(JSON.stringify(res));
     expect(res.catch[0].success.probtable_name).toBe('0성');
     expect(res.noCatch[0].success.probtable_name).toBe('0성');
 

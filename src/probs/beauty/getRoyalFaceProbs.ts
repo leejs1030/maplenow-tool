@@ -1,6 +1,7 @@
+import { fullUuidInfo } from 'custom-type';
 import BaseProbs from './baseProbs';
 
-const getRoyalFaceProbs = async (date?: Date) => {
+const getRoyalFaceProbs = async (date?: Date | fullUuidInfo) => {
   const res = await BaseProbs.getRoyalFaceProbs(false, date);
   return {
     male: res[0][0],
@@ -8,7 +9,7 @@ const getRoyalFaceProbs = async (date?: Date) => {
   };
 };
 
-const getRoyalChangeFaceProbs = async (date?: Date) => {
+const getRoyalChangeFaceProbs = async (date?: Date | fullUuidInfo) => {
   const res = await BaseProbs.getRoyalFaceProbs(true, date);
   return {
     male: res[0][0],

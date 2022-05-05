@@ -1,5 +1,6 @@
 import Probs from '@probs';
 import { masterPieceNameEnum } from 'custom-type';
+import Urls from '../../../src/urls';
 
 const testForMasterPiece = async (pieceName: masterPieceNameEnum) => {
   const res = await Probs.Outfit.getMasterPieceProbs(pieceName);
@@ -23,6 +24,13 @@ describe('test for outfit', () => {
     const res = await Probs.Outfit.getRoyalStyleProbs();
     expect(Array.isArray(res.male)).toBeTruthy();
     expect(Array.isArray(res.female)).toBeTruthy();
+  });
+
+  it('royal uuid', async () => {
+    const uuidInfos = await Urls.Paragraphs.Outfit.getRoyalStyleParagraphList();
+    const func = Probs.Outfit.getRoyalStyleProbs;
+    const [a, b] = await Promise.all([func(), func(uuidInfos)]);
+    expect(JSON.stringify(a)).toBe(JSON.stringify(b));
   });
 
   it('test for masterpiece', async () => {

@@ -1,16 +1,13 @@
 import Urls from '@urls';
-import { AutoTableItem } from 'custom-type';
+import getBaseProbsWithUuid from '@probs/baseUuidProbs';
 import utils from '@libs/utils';
+import { fullUuidInfo } from 'custom-type';
 
-const getAbilPointProbs = async (date?: Date) => {
-  const {
-    pageUuid,
-    subPageUuid,
-    paragraphs,
-  } = await Urls.Paragraphs.Abil.getPointParagraphList(date);
-  const promiseArr = await utils.generatePromiseArr(pageUuid, subPageUuid, paragraphs);
-  const res = await Promise.all(promiseArr);
-  return res.map((arr) => arr.map((value) => value.data.data.probs as AutoTableItem[]));
+const getAbilPointProbs = async (date?: Date | fullUuidInfo) => {
+  const { pageUuid, subPageUuid, paragraphs } = utils.isDate(date)
+    ? await Urls.Paragraphs.Abil.getPointParagraphList(date)
+    : date;
+  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs);
 };
 
 export default {
