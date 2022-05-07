@@ -1,4 +1,4 @@
-import { paragraphsType } from 'custom-type';
+import { paragraphsType } from 'mapletype';
 import axios from '../../../libs/axios';
 import errors from '../../../errors';
 

@@ -1,4 +1,4 @@
-import { cubeOrderEnum, fullUuidInfo, successFailEnum } from 'custom-type';
+import { cubeOrderEnum, fullUuidInfo, successFailEnum } from 'mapletype';
 import BaseProbs from './baseProbs';
 
 const getStrangeaddiCubeOptionProbs = async (isMiracle?: boolean, date?: Date | fullUuidInfo) => {

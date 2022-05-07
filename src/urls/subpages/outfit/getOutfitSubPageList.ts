@@ -1,4 +1,4 @@
-import { outfitPageEnum, pageEnum } from 'custom-type';
+import { outfitPageEnum, pageEnum } from 'mapletype';
 import axios from '../../../libs/axios';
 import errors from '../../../errors';
 import Pages from '../../pages';

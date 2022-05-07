@@ -1,4 +1,4 @@
-import { fullUuidInfo, successFailEnum } from 'custom-type';
+import { fullUuidInfo, successFailEnum } from 'mapletype';
 import BaseProbs from './baseProbs';
 
 const getAbilRankUpProbs = async (isPoint: boolean, date?: Date | fullUuidInfo) => {

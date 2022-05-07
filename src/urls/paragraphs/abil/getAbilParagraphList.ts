@@ -1,4 +1,4 @@
-import { abilPageEnum } from 'custom-type';
+import { abilPageEnum } from 'mapletype';
 import utils from '../../../libs/utils';
 import baseParagraphs from '../baseParagraphs';
 import Subpages from '../../subpages';

@@ -1,4 +1,4 @@
-import { masterPieceNameEnum, fullUuidInfo } from 'custom-type';
+import { masterPieceNameEnum, fullUuidInfo } from 'mapletype';
 import Urls from '../../../urls';
 import utils from '../../../libs/utils';
 import getBaseProbsWithUuid from '../../baseUuidProbs';

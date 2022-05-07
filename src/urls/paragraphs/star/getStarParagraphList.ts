@@ -1,4 +1,4 @@
-import { starPageEnum } from 'custom-type';
+import { starPageEnum } from 'mapletype';
 import Subpages from '../../../urls/subpages';
 import baseParagraphs from '../baseParagraphs';
 

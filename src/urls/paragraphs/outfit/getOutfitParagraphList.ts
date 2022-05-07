@@ -1,4 +1,4 @@
-import { masterPieceNameEnum, outfitPageEnum } from 'custom-type';
+import { masterPieceNameEnum, outfitPageEnum } from 'mapletype';
 import errors from '../../../errors';
 import Subpages from '../../subpages';
 import baseParagraphs from '../baseParagraphs';

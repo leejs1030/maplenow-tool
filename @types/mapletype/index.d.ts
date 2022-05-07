@@ -1,4 +1,4 @@
-declare module 'custom-type' {
+declare module 'mapletype' {
   declare interface uuidInfo {
     title: string;
     uuid: string;

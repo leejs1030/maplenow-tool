@@ -1,4 +1,4 @@
-import { fullUuidInfo, masterPieceNameEnum } from 'custom-type';
+import { fullUuidInfo, masterPieceNameEnum } from 'mapletype';
 import BaseProbs from './baseProbs';
 
 const getMasterPieceProbs = async (pieceName: masterPieceNameEnum, date?: Date | fullUuidInfo) => {

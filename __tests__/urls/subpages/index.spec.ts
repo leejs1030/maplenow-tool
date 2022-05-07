@@ -6,7 +6,7 @@ import {
   outfitPageEnum,
   petPageEnum,
   starPageEnum,
-} from 'custom-type';
+} from 'mapletype';
 
 describe('test for subpages', () => {
   it('getCubeSubPageList', async () => {

@@ -1,4 +1,4 @@
-import { probInfo } from 'custom-type';
+import { probInfo } from 'mapletype';
 import axios from '../axios';
 import generateUrl from './generateUrl';
 

@@ -1,4 +1,4 @@
-import { petPageEnum } from 'custom-type';
+import { petPageEnum } from 'mapletype';
 import Subpages from '../../subpages';
 import baseParagraphs from '../baseParagraphs';
 

@@ -1,4 +1,4 @@
-import { uuidInfo, pageEnum } from 'custom-type';
+import { uuidInfo, pageEnum } from 'mapletype';
 import errors from '../../errors';
 import Menus from '../menus';
 

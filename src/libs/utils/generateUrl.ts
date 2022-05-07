@@ -1,4 +1,4 @@
-import { probInfo } from 'custom-type';
+import { probInfo } from 'mapletype';
 
 const generateProbUrl = (
   pageUuid: string,

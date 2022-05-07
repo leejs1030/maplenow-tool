@@ -1,5 +1,5 @@
 import Probs from '@probs';
-import { masterPieceNameEnum } from 'custom-type';
+import { masterPieceNameEnum } from 'mapletype';
 import Urls from '../../../src/urls';
 
 const testForMasterPiece = async (pieceName: masterPieceNameEnum) => {

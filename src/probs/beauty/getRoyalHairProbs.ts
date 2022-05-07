@@ -1,4 +1,4 @@
-import { fullUuidInfo } from 'custom-type';
+import { fullUuidInfo } from 'mapletype';
 import BaseProbs from './baseProbs';
 
 const getRoyalHairProbs = async (year?: number | fullUuidInfo, month?: number | string) => {

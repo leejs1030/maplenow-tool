@@ -1,5 +1,5 @@
 import Urls from '@urls';
-import { pageEnum } from 'custom-type';
+import { pageEnum } from 'mapletype';
 
 describe('test for pages', () => {
   it('get pages from nexon now', async () => {
