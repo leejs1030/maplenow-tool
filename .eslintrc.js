@@ -20,5 +20,7 @@ module.exports = {
     curly: 'off',
     'nonblock-statement-body-position': 'off',
     'function-paren-newline': 'off',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
   },
 };
