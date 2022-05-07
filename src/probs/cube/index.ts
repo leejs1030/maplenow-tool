@@ -1,4 +1,4 @@
-import { cubeNameEnum, fullUuidInfo } from 'custom-type';
+import { cubeNameEnum, fullUuidInfo } from 'mapletype';
 import errors from '../../errors';
 import getRedCubeProbs from './getRedCubeProbs';
 import getBlackCubeProbs from './getBlackCubeProbs';

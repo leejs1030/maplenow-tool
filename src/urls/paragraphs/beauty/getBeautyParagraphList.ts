@@ -1,4 +1,4 @@
-import { beautyPageEnum } from 'custom-type';
+import { beautyPageEnum } from 'mapletype';
 import errors from '../../../errors';
 import Subpages from '../../../urls/subpages';
 import baseParagraphs from '../baseParagraphs';

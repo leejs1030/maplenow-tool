@@ -1,5 +1,5 @@
 import Probs from '@probs';
-import { cubeNameEnum } from 'custom-type';
+import { cubeNameEnum } from 'mapletype';
 import Urls from '../../../src/urls';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

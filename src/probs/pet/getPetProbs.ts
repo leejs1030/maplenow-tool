@@ -1,4 +1,4 @@
-import { fullUuidInfo, petPageEnum } from 'custom-type';
+import { fullUuidInfo, petPageEnum } from 'mapletype';
 import BaseProbs from './baseProbs';
 
 const getPetProbs = async (petPage: petPageEnum, date?: Date | fullUuidInfo) => {

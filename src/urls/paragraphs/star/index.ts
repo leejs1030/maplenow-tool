@@ -1,4 +1,4 @@
-import { starPageEnum } from 'custom-type';
+import { starPageEnum } from 'mapletype';
 import getStarParagraphList from './getStarParagraphList';
 
 const getNormalParagraphList = async (date?: Date) =>

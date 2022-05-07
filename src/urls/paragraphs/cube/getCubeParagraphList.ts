@@ -1,4 +1,4 @@
-import { cubePageEnum } from 'custom-type';
+import { cubePageEnum } from 'mapletype';
 import Subpages from '../../../urls/subpages';
 import baseParagraphs from '../baseParagraphs';
 

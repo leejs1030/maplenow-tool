@@ -1,4 +1,4 @@
-import { fullUuidInfo } from 'custom-type';
+import { fullUuidInfo } from 'mapletype';
 
 const translateDateToDescriptions = (date: Date) =>
   `${date.getFullYear()}년 ${date.getMonth()}월 ${date.getDay()}일 업데이트`;

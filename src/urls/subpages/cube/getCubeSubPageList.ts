@@ -1,4 +1,4 @@
-import { cubePageEnum, pageEnum } from 'custom-type';
+import { cubePageEnum, pageEnum } from 'mapletype';
 import axios from '../../../libs/axios';
 import errors from '../../../errors';
 import Pages from '../../pages';

@@ -1,4 +1,4 @@
-import { abilPageEnum, pageEnum } from 'custom-type';
+import { abilPageEnum, pageEnum } from 'mapletype';
 import axios from '../../../libs/axios';
 import errors from '../../../errors';
 import Pages from '../../pages';

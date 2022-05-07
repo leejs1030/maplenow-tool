@@ -1,4 +1,4 @@
-import { petPageEnum } from 'custom-type';
+import { petPageEnum } from 'mapletype';
 import getPetParagraphList from './getPetParagraphList';
 
 const getWonderBerryParagraphList = async (date?: Date) =>

@@ -1,9 +1,9 @@
-import { AutoTable } from 'custom-type';
+import { AutoTable } from 'mapletype';
 
 export const testUuids = (res: {
-  pageUuid: string,
-  subPageUuid: string,
-  paragraphs: { uuid: string, autoTable: AutoTable }[],
+  pageUuid: string;
+  subPageUuid: string;
+  paragraphs: { uuid: string; autoTable: AutoTable }[];
 }) => {
   expect(typeof res.pageUuid).toBe('string');
   expect(typeof res.subPageUuid).toBe('string');

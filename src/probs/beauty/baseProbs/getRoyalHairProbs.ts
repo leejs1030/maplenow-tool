@@ -1,4 +1,4 @@
-import { fullUuidInfo } from 'custom-type';
+import { fullUuidInfo } from 'mapletype';
 import Urls from '../../../urls';
 import getBaseProbsWithUuid from '../../baseUuidProbs';
 

@@ -1,4 +1,4 @@
-import { starPageEnum, fullUuidInfo } from 'custom-type';
+import { starPageEnum, fullUuidInfo } from 'mapletype';
 import Urls from '../../../urls';
 import getBaseProbsWithUuid from '../../baseUuidProbs';
 import utils from '../../../libs/utils';

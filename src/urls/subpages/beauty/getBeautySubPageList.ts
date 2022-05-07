@@ -1,4 +1,4 @@
-import { beautyPageEnum, pageEnum } from 'custom-type';
+import { beautyPageEnum, pageEnum } from 'mapletype';
 import Pages from '../../pages';
 import axios from '../../../libs/axios';
 import errors from '../../../errors';

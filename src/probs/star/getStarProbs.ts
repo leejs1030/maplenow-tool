@@ -1,4 +1,4 @@
-import { fullUuidInfo, starPageEnum } from 'custom-type';
+import { fullUuidInfo, starPageEnum } from 'mapletype';
 import BaseProbs from './baseProbs';
 
 const getStarProbs = async (starPage: starPageEnum, date?: Date | fullUuidInfo) => {

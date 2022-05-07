@@ -1,4 +1,4 @@
-import { petPageEnum, fullUuidInfo } from 'custom-type';
+import { petPageEnum, fullUuidInfo } from 'mapletype';
 import getBaseProbsWithUuid from '../../baseUuidProbs';
 import Urls from '../../../urls';
 import utils from '../../../libs/utils';
