@@ -1,4 +1,5 @@
 import { paragraphsType } from 'mapletype';
+import realaxios from 'axios';
 import axios from '../../../libs/axios';
 import errors from '../../../errors';
 
@@ -14,7 +15,7 @@ const getParagraphsByUuid = async (pageUuid: string, subPageUuid: string) => {
     .filter((value) => value.autoTable)
     .map((value) => ({ uuid: value.uuid, autoTable: value.autoTable }));
   try {
-    description = (await axios.get(description as string)).data;
+    description = (await realaxios.get(description as string)).data;
   } catch (err) {
     description = paragraphs[0].autoTable.header;
   }
