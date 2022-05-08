@@ -5,11 +5,19 @@ import errors from '../../../errors';
 const getParagraphsByUuid = async (pageUuid: string, subPageUuid: string) => {
   const res = await axios.get(`/pages/${pageUuid}?subPageUuid=${subPageUuid}`);
   if (res.status !== 200) throw new errors.NexonNowError();
-  const paragraphs = res.data.data.selectedSubPage.paragraphs as paragraphsType;
-  const description =
+  let paragraphs = res.data.data.selectedSubPage.paragraphs as paragraphsType;
+  let description: string | undefined =
     Array.isArray(paragraphs) && paragraphs.length
-      ? ((paragraphs[0] as any).wysiwygEditor.htmlUrl as string)
+      ? ((paragraphs[0] as any)?.wysiwygEditor?.htmlUrl as string)
       : undefined;
+  paragraphs = paragraphs
+    .filter((value) => value.autoTable)
+    .map((value) => ({ uuid: value.uuid, autoTable: value.autoTable }));
+  try {
+    description = (await axios.get(description as string)).data;
+  } catch (err) {
+    description = paragraphs[0].autoTable.header;
+  }
   return {
     pageUuid,
     subPageUuid,
