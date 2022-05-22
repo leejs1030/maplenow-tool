@@ -37,7 +37,10 @@ const getBaseProbsWithUuid = async (
   const ret = res.map((arr) => arr.map((value) => value.data.data.probs as AutoTableItem[]));
   cache[pageUuid] = {
     [subPageUuid]: {
-      updatedAt: new Date(`${ret.slice(-1)[0].slice(-1)[0].slice(-1)[0].updateDt}.000Z`),
+      updatedAt:
+        date && utils.isDate(date)
+          ? date
+          : new Date(`${ret.slice(-1)[0].slice(-1)[0].slice(-1)[0].updateDt}.000Z`),
       data: ret,
     },
   };
