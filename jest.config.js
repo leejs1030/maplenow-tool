@@ -7,4 +7,5 @@ module.exports = {
   testEnvironment: 'node',
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
   testMatch: ['**/*.spec.ts'],
+  testTimeout: 15000,
 };
