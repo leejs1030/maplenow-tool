@@ -1,6 +1,6 @@
 {
   "name": "maplenow-tool",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "easier way to use nexon-now api for maplestory",
   "types": "dist/src/index.d.ts",
   "main": "dist/src/index.js",
