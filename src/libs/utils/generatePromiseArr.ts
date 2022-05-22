@@ -1,5 +1,5 @@
 import { probInfo } from 'mapletype';
-import axios from '../axios';
+import myAxios from '../myaxios';
 import generateUrl from './generateUrl';
 
 const generatePromiseArr = async (
@@ -10,7 +10,7 @@ const generatePromiseArr = async (
   paragraphs.map((value) =>
     Promise.all(
       value.autoTable.usedProbtables.map((row: probInfo) =>
-        axios.get(generateUrl.generateProbUrl(pageUuid, subPageUuid, value.uuid, row)),
+        myAxios.get(generateUrl.generateProbUrl(pageUuid, subPageUuid, value.uuid, row)),
       ),
     ),
   );

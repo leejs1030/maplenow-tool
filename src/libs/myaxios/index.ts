@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosRequestHeaders, AxiosResponse } from 'axios';
+import realAxios, { AxiosRequestConfig, AxiosRequestHeaders, AxiosResponse } from 'axios';
 import { USER_AGENT, BASE_URL } from '../../config/constants';
 
 class MyAxios {
@@ -11,14 +11,14 @@ class MyAxios {
       ...inputHeaders,
     };
     config.headers = { ...this.DEFAULT_HEADER, ...config.headers };
-    return axios.get(`${BASE_URL}${url}`, config);
+    return realAxios.get(`${BASE_URL}${url}`, config);
   }
 }
 
-// const myAxios = new MyAxios();
+const myAxios = new MyAxios();
 // myAxios.get('/menus')
 //   // .then((data) => console.log(data))
 //   .catch((error) => console.log(error));
 
 // axios.get('https://orng-api.nexon.com/api/services/maplestory/menus', {headers: });
-export default new MyAxios();
+export default myAxios;

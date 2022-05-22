@@ -1,3 +1,4 @@
+import getBaseProbsWithUuid from './baseUuidProbs';
 import Cube from './cube';
 import Abil from './abil';
 import Outfit from './outfit';
@@ -12,4 +13,5 @@ export default {
   Beauty,
   Pet,
   Star,
+  getBaseProbsWithUuid,
 };

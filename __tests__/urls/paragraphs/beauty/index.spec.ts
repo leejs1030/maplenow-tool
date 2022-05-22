@@ -22,5 +22,15 @@ describe('test for paragraphs ', () => {
       const res = await Urls.Paragraphs.Beauty.getRoyalFaceParagraphList(true);
       testUuids(res);
     });
+
+    it('hair award', async () => {
+      const res = await Urls.Paragraphs.Beauty.getBeautyAwardHairParagraphList();
+      testUuids(res);
+    });
+
+    it('face award', async () => {
+      const res = await Urls.Paragraphs.Beauty.getBeautyAwardFaceParagraphList();
+      testUuids(res);
+    });
   });
 });
