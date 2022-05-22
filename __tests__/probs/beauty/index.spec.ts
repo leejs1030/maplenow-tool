@@ -121,4 +121,52 @@ describe('test for beauty', () => {
       });
     });
   });
+
+  describe('beauty award', () => {
+    describe(' hair', () => {
+      it('current', async () => {
+        const res = await Probs.Beauty.getBeautyAwardHairProbs();
+        expect(res.male[0].trialresult_name).toBe('허쉬 헤어'); // 2022 05 05 기준
+        res.male.forEach((value) => {
+          expect(value.trialid_name).toBe('뷰티 어워즈 헤어');
+          expect(value.probtable_name.includes('남자')).toBeTruthy();
+        });
+        expect(res.female[0].trialresult_name).toBe('하리화 헤어'); // 2022 05 05 기준
+        res.female.forEach((value) => {
+          expect(value.trialid_name).toBe('뷰티 어워즈 헤어');
+          expect(value.probtable_name.includes('여자')).toBeTruthy();
+        });
+      });
+    });
+
+    it('current uuid', async () => {
+      const uuidInfos = await Urls.Paragraphs.Beauty.getBeautyAwardHairParagraphList();
+      const func = Probs.Beauty.getBeautyAwardHairProbs;
+      const [a, b] = await Promise.all([func(), func(uuidInfos)]);
+      expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+    });
+
+    describe('face', () => {
+      it('current', async () => {
+        const res = await Probs.Beauty.getBeautyAwardFaceProbs();
+        expect(res.male[0].trialresult_name).toBe('차분한 루시드 얼굴'); // 2022 05 05 기준
+        res.male.forEach((value) => {
+          expect(value.trialid_name).toBe('뷰티 어워즈 성형');
+          expect(value.probtable_name.includes('남자')).toBeTruthy();
+        });
+        expect(res.female[0].trialresult_name).toBe('조용한 눈 얼굴'); // 2022 05 05 기준
+        res.female.forEach((value) => {
+          expect(value.trialid_name).toBe('뷰티 어워즈 성형');
+          expect(value.probtable_name.includes('여자')).toBeTruthy();
+        });
+      });
+
+      it('current uuid', async () => {
+        const uuidInfos = await Urls.Paragraphs.Beauty.getBeautyAwardFaceParagraphList();
+        const func = Probs.Beauty.getBeautyAwardFaceProbs;
+        const [a, b] = await Promise.all([func(), func(uuidInfos)]);
+        expect(JSON.stringify(a)).toBe(JSON.stringify(b));
+      });
+    });
+  });
 });

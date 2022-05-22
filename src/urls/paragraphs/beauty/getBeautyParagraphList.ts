@@ -44,7 +44,25 @@ const getRoyalFaceParagraphList = async (isChange: boolean, date?: Date) => {
   return baseParagraphs.compareWithDateAndGetParagraphs(pageUuid, subPages, date);
 };
 
+const getBeautyAwardHairParagraphList = async (date?: Date) => {
+  const { pageUuid, subPages } = await Subpages.Beauty.getBeautySubPageList(
+    beautyPageEnum.beautyAwardHair,
+  );
+  if (subPages.length <= 1) return baseParagraphs.getParagraphsByUuid(pageUuid, subPages[0].uuid);
+  return baseParagraphs.compareWithDateAndGetParagraphs(pageUuid, subPages, date);
+};
+
+const getBeautyAwardFaceParagraphList = async (date?: Date) => {
+  const { pageUuid, subPages } = await Subpages.Beauty.getBeautySubPageList(
+    beautyPageEnum.beautyAwardFace,
+  );
+  if (subPages.length <= 1) return baseParagraphs.getParagraphsByUuid(pageUuid, subPages[0].uuid);
+  return baseParagraphs.compareWithDateAndGetParagraphs(pageUuid, subPages, date);
+};
+
 export default {
   getRoyalHairParagraphList,
   getRoyalFaceParagraphList,
+  getBeautyAwardHairParagraphList,
+  getBeautyAwardFaceParagraphList,
 };
