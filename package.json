@@ -5,7 +5,7 @@
   "types": "dist/src/index.d.ts",
   "main": "dist/src/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --declaration",
     "test": "jest --no-cache"
   },
   "repository": {
