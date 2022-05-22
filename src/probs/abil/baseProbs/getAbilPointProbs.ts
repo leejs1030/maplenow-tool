@@ -7,7 +7,7 @@ const getAbilPointProbs = async (date?: Date | fullUuidInfo) => {
   const { pageUuid, subPageUuid, paragraphs } = utils.isDate(date)
     ? await Urls.Paragraphs.Abil.getPointParagraphList(date)
     : date;
-  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs);
+  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs, date);
 };
 
 export default {

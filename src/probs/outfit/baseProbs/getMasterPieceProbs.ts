@@ -7,7 +7,7 @@ const getMasterPieceProbs = async (pieceName: masterPieceNameEnum, date?: Date |
   const { pageUuid, subPageUuid, paragraphs } = utils.isDate(date)
     ? await Urls.Paragraphs.Outfit.getMasterPieceParagraphList(pieceName, date)
     : date;
-  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs);
+  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs, date);
 };
 
 export default {

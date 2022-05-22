@@ -7,7 +7,7 @@ const getRoyalStyleProbs = async (season?: number | fullUuidInfo, date?: Date) =
   const { pageUuid, subPageUuid, paragraphs } = isNotFullUuidInfo
     ? await Urls.Paragraphs.Outfit.getRoyalStyleParagraphList(season, date)
     : season;
-  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs);
+  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs, date);
 };
 
 export default {

@@ -7,14 +7,14 @@ const getBeautyAwardFaceProbs = async (date?: Date | fullUuidInfo) => {
   const { pageUuid, subPageUuid, paragraphs } = utils.isDate(date)
     ? await Urls.Paragraphs.Beauty.getBeautyAwardFaceParagraphList(date)
     : date;
-  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs);
+  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs, date);
 };
 
 const getBeautyAwardHairProbs = async (date?: Date | fullUuidInfo) => {
   const { pageUuid, subPageUuid, paragraphs } = utils.isDate(date)
     ? await Urls.Paragraphs.Beauty.getBeautyAwardHairParagraphList(date)
     : date;
-  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs);
+  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs, date);
 };
 
 export default {

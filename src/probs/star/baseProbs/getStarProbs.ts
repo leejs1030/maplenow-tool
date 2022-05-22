@@ -7,7 +7,7 @@ const getStarProbs = async (starPage: starPageEnum, date?: Date | fullUuidInfo) 
   const { pageUuid, subPageUuid, paragraphs } = utils.isDate(date)
     ? await Urls.Paragraphs.Star.getStarParagraphList(starPage, date)
     : date;
-  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs);
+  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs, date);
 };
 
 export default {

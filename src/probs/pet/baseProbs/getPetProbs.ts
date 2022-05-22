@@ -7,7 +7,7 @@ const getPetProbs = async (petPage: petPageEnum, date?: Date | fullUuidInfo) => 
   const { pageUuid, subPageUuid, paragraphs } = utils.isDate(date)
     ? await Urls.Paragraphs.Pet.getPetParagraphList(petPage, date)
     : date;
-  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs);
+  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs, date);
 };
 
 export default {

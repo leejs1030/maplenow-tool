@@ -1,4 +1,4 @@
-import { AutoTableItem, paragraphsType } from 'mapletype';
+import { AutoTableItem, paragraphsType, fullUuidInfo } from 'mapletype';
 import utils from '../libs/utils';
 
 const cache: {
@@ -15,24 +15,23 @@ const second = 1000 * millisecond;
 const minute = 60 * second;
 const hour = 60 * minute;
 
-// const hasCache = (pageUuid: string, subPageUuid: string): boolean => {
-//   if (!cache[pageUuid] || !cache[pageUuid][subPageUuid]) return false;
-//   const now = new Date();
-//   const before = cache[pageUuid][subPageUuid].updatedAt;
-//   console.log(now.getTime());
-//   console.log(before.getTime());
-//   console.log(now.getTime() - before.getTime());
-//   console.log(hour - minute - 30 * second);
-//   if (now.getTime() - before.getTime() >= hour - minute - 30 * second) return false;
-//   return true;
-// };
+const hasCache = (pageUuid: string, subPageUuid: string, now: Date): boolean => {
+  if (!cache[pageUuid] || !cache[pageUuid][subPageUuid]) return false;
+  const before = cache[pageUuid][subPageUuid].updatedAt;
+  return !(
+    now.getTime() - before.getTime() >= hour - minute - 30 * second ||
+    now.getTime() - before.getTime() < 0
+  );
+};
 
 const getBaseProbsWithUuid = async (
   pageUuid: string,
   subPageUuid: string,
   paragraphs: paragraphsType,
+  date?: Date | fullUuidInfo,
 ) => {
-  if (hasCache(pageUuid, subPageUuid)) return cache[pageUuid][subPageUuid].data;
+  if (hasCache(pageUuid, subPageUuid, date && utils.isDate(date) ? date : new Date()))
+    return cache[pageUuid][subPageUuid].data;
   const promiseArr = await utils.generatePromiseArr(pageUuid, subPageUuid, paragraphs);
   const res = await Promise.all(promiseArr);
   const ret = res.map((arr) => arr.map((value) => value.data.data.probs as AutoTableItem[]));
@@ -42,7 +41,7 @@ const getBaseProbsWithUuid = async (
       data: ret,
     },
   };
-  console.log('yes!!!');
+  console.log('there is no cache!!!');
   return ret;
 };
 
