@@ -44,7 +44,6 @@ const getBaseProbsWithUuid = async (
       data: ret,
     },
   };
-  console.log('there is no cache!!!');
   return ret;
 };
 
