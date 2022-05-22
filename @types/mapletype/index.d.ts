@@ -39,6 +39,8 @@ declare module 'mapletype' {
     royalFace,
     changeRoyalHair,
     changeRoyalFace,
+    beautyAwardHair,
+    beautyAwardFace,
   }
 
   declare const enum petPageEnum {
