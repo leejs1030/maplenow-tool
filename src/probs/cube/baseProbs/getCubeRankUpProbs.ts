@@ -7,7 +7,7 @@ const getCubeRankUpProbs = async (isMiracle?: boolean, date?: Date | fullUuidInf
   const { pageUuid, subPageUuid, paragraphs } = utils.isDate(date)
     ? await Urls.Paragraphs.Cube.getRankUpParagraphList(isMiracle, date)
     : date;
-  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs);
+  return getBaseProbsWithUuid(pageUuid, subPageUuid, paragraphs, date);
 };
 
 export default {

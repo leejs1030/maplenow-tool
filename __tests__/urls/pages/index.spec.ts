@@ -12,7 +12,7 @@ describe('test for pages', () => {
     expect(cube.length).toBe(4);
     expect(abil.length).toBe(2);
     expect(outfit.length).toBe(3);
-    expect(beauty.length).toBe(4);
+    expect(beauty.length).toBe(6);
     expect(pet.length).toBe(3);
     expect(star.length).toBe(5);
   });

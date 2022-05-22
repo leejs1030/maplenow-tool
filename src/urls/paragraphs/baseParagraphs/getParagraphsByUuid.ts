@@ -1,6 +1,6 @@
 import { paragraphsType } from 'mapletype';
 import realAxios from 'axios';
-import { USER_AGENT } from '@config/constants';
+import { USER_AGENT } from '../../../config/constants';
 import myAxios from '../../../libs/myaxios';
 import errors from '../../../errors';
 
